@@ -16,7 +16,7 @@ body{
     width: 100%;
     top: 250px;
     bottom: 0px;
-    overflow: hidden;
+    overflow: auto;
     padding: 50px;
     padding-bottom: 20px;
     background: #723D46;
@@ -24,15 +24,18 @@ body{
 
 .choices{
 	margin: auto;
-    width: 80%;   
+    width: 80%;
+    display: table;   
 }
 
 .pictures{
-    float: left;
+    vertical-align: middle;
+    display: table-cell;
 }
 
-.description{
-    display:inline-block;
+.details{
+    vertical-align: top;
+    display: table-cell;
 }
 
 input[type="text"] {
