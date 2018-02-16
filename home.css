@@ -4,23 +4,27 @@ body{
 
 .header{
 	width: 100%;
-    height: 270px;
+    height: 250px;
     overflow: hidden;
-    background: #E26D5C;
+    background: #2C574C;
     position: fixed;
     vertical-align: middle;
 }
 
 .content{
 	position: fixed;
-    height: calc(100% - 250px);
+    height: calc(100% - 260px);
     width: 100%;
     top: 250px;
-    bottom: 0px;
     overflow: auto;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
     background: #723D46;
+    text-align: center;
+}
+
+.choices{
+    padding-bottom: 40px;
 }
 
 /*.picture{
@@ -34,7 +38,7 @@ body{
 }*/
 
 .picture img{
-    max-width: 40%;
+    max-width: 25%;
     min-width: 200px;
     height: auto;
 }
