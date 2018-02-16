@@ -18,18 +18,12 @@ body{
     top: 250px;
     bottom: 0px;
     overflow: auto;
-    padding: 50px;
+    padding-top: 50px;
     padding-bottom: 20px;
     background: #723D46;
 }
 
-.choices{
-	margin: auto;
-    width: 80%;
-    display: table;   
-}
-
-.pictures{
+/*.picture{
     vertical-align: middle;
     display: table-cell;
 }
@@ -37,6 +31,12 @@ body{
 .details{
     vertical-align: top;
     display: table-cell;
+}*/
+
+.picture img{
+    max-width: 40%;
+    min-width: 200px;
+    height: auto;
 }
 
 input[type="text"] {
