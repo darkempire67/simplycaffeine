@@ -13,30 +13,20 @@ body{
 
 .content{
 	position: fixed;
-    height: calc(100% - 260px);
+    height: calc(100% - 290px);
     width: 100%;
     top: 250px;
     overflow: auto;
     padding-top: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     background: #723D46;
     text-align: center;
     color: #DDDDD9;
 }
 
 .choices{
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
-
-/*.picture{
-    vertical-align: middle;
-    display: table-cell;
-}
-
-.details{
-    vertical-align: top;
-    display: table-cell;
-}*/
 
 .picture img{
     max-width: 25%;
@@ -49,3 +39,20 @@ input[type="text"] {
     margin-right: 20px;
     
 }
+
+.checkout {
+    
+}
+
+.checkout button{
+}
+
+/*.picture{
+    vertical-align: middle;         //old code
+    display: table-cell;            //might use later
+}
+
+.details{
+    vertical-align: top;
+    display: table-cell;
+}*/
