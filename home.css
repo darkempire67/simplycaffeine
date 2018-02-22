@@ -1,6 +1,22 @@
 body{
     margin: 0px;
 }
+
+button{
+    color: white;
+    background-color: #1C403E;
+    border-color: #0A2463;
+}
+
+button:hover{
+    background-color: #DDDDD9;
+    color: black;
+}
+
+button:active{
+    background-color: #0A2463;
+    color: #FFFFFF;
+}
  
 .header{
 	width: 100%;
