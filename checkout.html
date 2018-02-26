@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+
+
+
+<body>
+<div class="checkout_panel">
+	<div class="panel_body">
+		<form>
+			<fieldset>
+				<legend><h2>CheckOut....</h2></legend>
+				<section>
+
+
+					<p>
+						<label for="Building"> <span>Building:</span> <strong><abbr
+								title="required ">*</abbr></strong>
+						</label> <input type="text" id="building_" name="building">
+					</p>
+					<p>
+						<label for="Room#"> <span>Room Number :</span> <strong><abbr
+								title="required">*</abbr></strong>
+						</label> <input type="text" id="room#_" name="room">
+					</p>
+
+
+					<!-- 	<p> -->
+					<!-- 	<label for = "Time"> -->
+					<!-- 	<span>Time to be delivered: </span> -->
+					<!-- 	<strong><abbr title="required">*</abbr></strong> -->
+					<!-- 	</label>  -->
+					<!-- 	<input type ="text" id="time_" name="time"> -->
+					<!-- 	</p> -->
+					<p>
+						<label for="hour"> <span>Hour:</span>
+						</label> <select id="hour_" name="hour">
+							<option value=1>01</option>
+							<option value=2>02</option>
+							<option value=3>03</option>
+							<option value=4>04</option>
+							<option value=5>05</option>
+							<option value=6>06</option>
+							<option value=7>07</option>
+							<option value=8>08</option>
+							<option value=9>09</option>
+							<option value=10>10</option>
+							<option value=11>11</option>
+							<option value=12>12</option>
+
+						</select>
+
+					</p>
+					<p>
+						<label for="minutes"> <span>Minutes: </span>
+						</label> <select id="minutes_" name="minutes">
+							<option value=00>00</option>
+							<option value=05>05</option>
+							<option value=10>10</option>
+							<option value=15>15</option>
+							<option value=20>20</option>
+							<option value=25>25</option>
+							<option value=30>30</option>
+							<option value=35>35</option>
+							<option value=40>40</option>
+							<option value=45>45</option>
+							<option value=50>50</option>
+							<option value=55>55</option>
+
+						</select>
+
+					</p>
+					<p>
+						<label for="am"> <input type="radio" id="am_"
+							name="whatTime" value="AM"> AM
+						</label>
+					</p>
+					<p>
+						<label for="pm"> <input type="radio" id="pm_"
+							name="whatTime" value="PM"> PM
+						</label>
+					</p>
+
+
+
+				</section>
+
+				<h3>this is what you ordered...........................</h3>
+
+				<p>
+					
+			</fieldset>
+		
+		</form>
+		
+	</div>
+</div>
+<button type="button" onclick="location.href='test.html';" >Oder my Coffee! 
+
+</button>
+</body>
+
+<style>
+.checkout_panel {
+	font-family: 'Montserrat', sans-serif;
+  background: white;
+	box-shadow: 20px 20px 20px 0 rgba(.2, .1, .2, .1);
+}
+.panel_body{
+font-family: 'Montserrat', sans-serif;
+  opacity:.75;
+  
+  color: darkgreen;
+  background: white;
+  
+}
+button{
+ position: fixed;
+  bottom: -4px;
+  right: 10px;
+border-radius: 12px;
+padding: 10px 30px;
+border: 2px solid #4CAF50;
+background-color: white;
+color: black;
+-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.button:active {
+  background-color: #3e8e41;
+  color: black;
+  box-shadow: 0 5px #666;
+  transform: translateX(20px);
+}
+h2{
+font-family: cursive;
+}
+
+
+</style>
+
+
+
+
+</html>
