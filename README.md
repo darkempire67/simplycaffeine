@@ -6,5 +6,8 @@ When the order is processed the orders will be sent to a webpage only viewable t
 
 A separate page will then be available to the delivery person where they can view the customer name, item name, and destination. Once they arrive at the class room, they will press a button that notifies the customer, through email, that their order has arrived.
 
-### Project Members: Cris Ramos
-Gian Tolentino Leonardo Gallegos Vay Tang
+### Project Members: 
+Cris Ramos
+Gian Tolentino 
+Leonardo Gallegos 
+Vay Tang
