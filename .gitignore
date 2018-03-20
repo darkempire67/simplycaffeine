@@ -22,3 +22,6 @@
 
 
 #Additional Specific files to Ignore
+
+!WebContent
+!WebContent/**
