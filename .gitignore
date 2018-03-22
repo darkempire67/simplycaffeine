@@ -15,6 +15,8 @@
 !*.md
 !*.jpg
 !*.png
+!*.html
+!*.css
 
 
 # MAC HIDDEN FILES
@@ -25,3 +27,13 @@
 
 !WebContent
 !WebContent/**
+
+!menu
+!menu/**
+
+!auxiliary
+!auxiliary/**
+
+!logo
+!logo/**
+
