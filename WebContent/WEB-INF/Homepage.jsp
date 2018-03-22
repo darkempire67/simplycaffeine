@@ -198,7 +198,7 @@ h4 {
 .jumbotron {
 	background-color: #1C403E;
 	color: #fff;
-	padding: 100px 25px;
+	padding-bottom: 50px;
 	font-family: Montserrat, sans-serif;
 }
 
@@ -364,19 +364,29 @@ keyframes slide { 0% {
 opacity
 
 
+
+
 :
 
+
  
+
 
 1;
 transform
 
 
+
+
 :
+
 
  
 
+
 translateY
+
+
 
 
 (0%);
@@ -393,19 +403,29 @@ translateY
 opacity
 
 
+
+
 :
 
+
  
+
 
 1;
 -webkit-transform
 
 
+
+
 :
+
 
  
 
+
 translateY
+
+
 
 
 (0%);
@@ -455,6 +475,9 @@ translateY
 	</nav>
 
 	<div class="jumbotron text-center">
+		<img
+			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
+			width=50% height=auto>
 		<h1>Simply Caffeine</h1>
 		<p>We will deliver coffee to your class!</p>
 	</div>
@@ -529,81 +552,81 @@ translateY
 						</div>
 					</div>
 				</div>
-		</div>
-				<div class="col-sm-6">
-					<div class="choices">
-						<div class="picture">
-							<img
-								src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/cafemocha.jpg" />
-						</div>
-
-						<div class="details">
-							<div class="description">
-								<h3>Caffe Mocha</h3>
-								<h4>A drink comprised of espresso and hot water.</h4>
-							</div>
-							<div class="addorder">
-								Qty: <input type="text" name="quantity" id="caffemocha" /> <input
-									type="hidden" name="coffeeName" value="caffemocha" />
-								<button type="button" class="btn btn-primary">Add to
-									Order</button>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
-
-			<div class="row slideanim">
-				<div class="col-sm-6">
-					<div class="choices">
-						<div class="picture">
-							<img
-								src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/caffelatte.jpeg" />
-						</div>
-
-						<div class="details">
-							<div class="description">
-								<h3>Caffe Latte</h3>
-								<h4>A drink comprised of espresso and hot water.</h4>
-							</div>
-
-							<div class="addorder">
-								Qty: <input type="text" name="quantity" id="caffelatte" /> <input
-									type="hidden" name="coffeeName" value="caffelatte" />
-								<button type="button" class="btn btn-primary">Add to
-									Order</button>
-							</div>
-						</div>
+			<div class="col-sm-6">
+				<div class="choices">
+					<div class="picture">
+						<img
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/cafemocha.jpg" />
 					</div>
-				</div>
 
-				<div class="col-sm-6">
-					<div class="choices">
-						<div class="picture">
-							<img
-								src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/espresso.jpg" />
+					<div class="details">
+						<div class="description">
+							<h3>Caffe Mocha</h3>
+							<h4>A drink comprised of espresso and hot water.</h4>
 						</div>
-
-						<div class="details">
-							<div class="description">
-								<h3>Espresso</h3>
-								<h4>A drink comprised of espresso and hot water.</h4>
-							</div>
-
-							<div class="addorder">
-								Qty: <input type="text" name="quantity" id="espresso" /> <input
-									type="hidden" name="coffeeName" value="espresso" />
-								<button type="button" class="btn btn-primary">Add to
-									Order</button>
-
-							</div>
+						<div class="addorder">
+							Qty: <input type="text" name="quantity" id="caffemocha" /> <input
+								type="hidden" name="coffeeName" value="caffemocha" />
+							<button type="button" class="btn btn-primary">Add to
+								Order</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
-	
+
+		<div class="row slideanim">
+			<div class="col-sm-6">
+				<div class="choices">
+					<div class="picture">
+						<img
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/caffelatte.jpeg" />
+					</div>
+
+					<div class="details">
+						<div class="description">
+							<h3>Caffe Latte</h3>
+							<h4>A drink comprised of espresso and hot water.</h4>
+						</div>
+
+						<div class="addorder">
+							Qty: <input type="text" name="quantity" id="caffelatte" /> <input
+								type="hidden" name="coffeeName" value="caffelatte" />
+							<button type="button" class="btn btn-primary">Add to
+								Order</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-6">
+				<div class="choices">
+					<div class="picture">
+						<img
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/espresso.jpg" />
+					</div>
+
+					<div class="details">
+						<div class="description">
+							<h3>Espresso</h3>
+							<h4>A drink comprised of espresso and hot water.</h4>
+						</div>
+
+						<div class="addorder">
+							Qty: <input type="text" name="quantity" id="espresso" /> <input
+								type="hidden" name="coffeeName" value="espresso" />
+							<button type="button" class="btn btn-primary">Add to
+								Order</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- Container (Portfolio Section) -->
 	<div id="portfolio" class="container-fluid text-center bg-grey">
 		<h2>Portfolio</h2>
