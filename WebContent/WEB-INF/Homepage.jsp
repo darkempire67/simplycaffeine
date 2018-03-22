@@ -159,7 +159,7 @@ input[type=submit] {
 	</div> --%>
 
 
-<title>Bootstrap Theme Company Page</title>
+<title>Simply Caffeine</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -366,10 +366,14 @@ opacity
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1;
@@ -378,13 +382,19 @@ transform
 
 
 
+
+
 :
+
 
 
  
 
 
+
 translateY
+
+
 
 
 
@@ -405,10 +415,14 @@ opacity
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1;
@@ -417,13 +431,19 @@ opacity
 
 
 
+
+
 :
+
 
 
  
 
 
+
 translateY
+
+
 
 
 
@@ -447,6 +467,61 @@ translateY
 		font-size: 150px;
 	}
 }
+
+.checkout_panel {
+	font-family: 'Montserrat', sans-serif;
+	background: white;
+	box-shadow: 20px 20px 20px 0 rgba(.2, .1, .2, .1);
+}
+
+.panel_body {
+	font-family: 'Montserrat', sans-serif;
+	opacity: .75;
+	color: #1C403E;
+	background: white;
+}
+
+.submitButton {
+	position: fixed;
+	bottom: -4px;
+	right: 10px;
+	border-radius: 10px;
+	padding: 8px 12px;
+	border: 2px solid #1C403E;
+	background-color: white;
+	color: black;
+	-webkit-transition-duration: 0.s; /* Safari */
+	transition-duration: 0.s;
+}
+
+input[type=submit] {
+	border: none;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	background-color: white;
+}
+
+.submitButton:hover, input[type=submit]:hover {
+	background-color: #1C403E; /* Green */
+	color: white;
+}
+
+.submitButton:active {
+	background-color: #3e8e41;
+	color: black;
+	box-shadow: 0 5px #666;
+	transform: translateX(20px);
+}
+
+.legendTag {
+	font-family: cursive;
+	font-size: 30px;
+	font-weight: bold;
+	color: darkgreen;
+	font-weight: bold;
+}
 </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar"
@@ -467,7 +542,7 @@ translateY
 					<li><a href="#about">ABOUT</a></li>
 					<li><a href="#PRODUCTS">PRODUCTS</a></li>
 					<li><a href="#portfolio">PORTFOLIO</a></li>
-					<li><a href="#pricing">PRICING</a></li>
+					<li><a href="#checkout">CHECKOUT</a></li>
 					<li><a href="#contact">CONTACT</a></li>
 				</ul>
 			</div>
@@ -676,7 +751,7 @@ translateY
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<h4>
-						"This company is the best. I am so happy with the result!"<br>
+						"WOW!! Best coffee on campus!!!"<br>
 						<span>Michael Roe, Vice President, Comment Box</span>
 					</h4>
 				</div>
@@ -707,178 +782,138 @@ translateY
 		</div>
 	</div>
 
-	<!-- Container (Pricing Section) -->
-	<div id="pricing" class="container-fluid">
-		<div class="text-center">
-			<h2>Pricing</h2>
-			<h4>Choose a payment plan that works for you</h4>
+	<!-- Container (checkout Section) -->
+	<div id="checkout" class="container-fluid">
+
+
+		<div class="checkout_panel form-group">
+			<div class="panel_body">
+				<form action="Homepage" method="post">
+					<fieldset>
+						<legend class="legendTag">
+							 CheckOut....
+						</legend>
+						 <label for="Building"> <span>Building:</span>
+							<strong><abbr title="required ">*</abbr></strong>
+						</label> <input type="text" id="building" name="building" class="form-control"  placeholder="Enter Building Name"/><br /> <br />
+						<label for="Room#"> <span>Room Number :</span> <strong><abbr
+								title="required">*</abbr></strong>
+						</label> <input type="text" id="roomNumber" name="roomNumber" class="form-control"  placeholder="Enter Room Number" /> <br />
+					
+						<div class="form-group row form-inline">
+						<label for="hour"> <span> Hour</span>
+						</label> <select class="col-sm-2 col-form-label form-control" id="hour" name="hour">
+							<option value="1">01</option>
+							<option value="2">02</option>
+							<option value="3">03</option>
+							<option value="4">04</option>
+							<option value="5">05</option>
+							<option value="6">06</option>
+							<option value="7">07</option>
+							<option value="8">08</option>
+							<option value="9">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+
+						</select> <label for="minutes"> <span> Minutes
+						</span>
+						</label> <select class="col-sm-2 col-form-label form-control" id="minutes" name="minutes">
+							<option value="00">00</option>
+							<option value="05">05</option>
+							<option value="10">10</option>
+							<option value="15">15</option>
+							<option value="20">20</option>
+							<option value="25">25</option>
+							<option value="30">30</option>
+							<option value="35">35</option>
+							<option value="40">40</option>
+							<option value="45">45</option>
+							<option value="50">50</option>
+							<option value="55">55</option>
+
+						</select>  
+						</div>
+						<label for="am"> <input  class="form-check form-check-inline" type="radio"
+							id="am" name="period" value="am" /> AM
+						</label> <label for="pm"> <input class="form-check form-check-inline" type="radio" id="pm"
+							name="period" value="pm" /> PM
+						</label>
+						 <br /> <br />
+						<h3>this is what you ordered...........................</h3>
+
+
+						<table class="table table-hover">
+							<thead class="thead-dark text-center">
+								<tr>
+									<th>Id</th>
+									<th>Coffee</th>
+									<th>Quantity</th>
+									<th>Cost</th>
+									<th>Total Cost</th>
+									<th></th>
+
+								</tr>
+							</thead>
+							<tbody id="checked">
+								<c:forEach items="${coffeeEntries}" var="coffeeEntry">
+									<tr>
+										<td class="text-center">${coffeeEntry.id}</td>
+										<td class="text-center">${coffeeEntry.coffeeName}</td>
+										<td class="text-center">${coffeeEntry.quantity}</td>
+										<td class="text-center">${coffeeEntry.cost}</td>
+										<td class="text-center">${coffeeEntry.cost}</td>
+										<%-- 	<td class="text-center">${coffeeEntry.period}</td> --%>
+										<td class="text-center"><a
+											href='Delivered?id=${coffeeEntry.id}'>Edit</a></td>
+									</tr>
+								</c:forEach>
+
+							</tbody>
+						</table>
+
+					</fieldset>
+
+					<div class="submitButton">
+						<input type="submit" name="order" value="Order my Coffee!" />
+					</div>
+				</form>
+
+			</div>
 		</div>
-		<div class="row slideanim">
-			<div class="col-sm-4 col-xs-12">
-				<div class="panel panel-default text-center">
-					<div class="panel-heading">
-						<h1>Basic</h1>
-					</div>
-					<div class="panel-body">
-						<p>
-							<strong>20</strong> Lorem
-						</p>
-						<p>
-							<strong>15</strong> Ipsum
-						</p>
-						<p>
-							<strong>5</strong> Dolor
-						</p>
-						<p>
-							<strong>2</strong> Sit
-						</p>
-						<p>
-							<strong>Endless</strong> Amet
-						</p>
-					</div>
-					<div class="panel-footer">
-						<h3>$19</h3>
-						<h4>per month</h4>
-						<button class="btn btn-lg">Sign Up</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 col-xs-12">
-				<div class="panel panel-default text-center">
-					<div class="panel-heading">
-						<h1>Pro</h1>
-					</div>
-					<div class="panel-body">
-						<p>
-							<strong>50</strong> Lorem
-						</p>
-						<p>
-							<strong>25</strong> Ipsum
-						</p>
-						<p>
-							<strong>10</strong> Dolor
-						</p>
-						<p>
-							<strong>5</strong> Sit
-						</p>
-						<p>
-							<strong>Endless</strong> Amet
-						</p>
-					</div>
-					<div class="panel-footer">
-						<h3>$29</h3>
-						<h4>per month</h4>
-						<button class="btn btn-lg">Sign Up</button>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 col-xs-12">
-				<div class="panel panel-default text-center">
-					<div class="panel-heading">
-						<h1>Premium</h1>
-					</div>
-					<div class="panel-body">
-						<p>
-							<strong>100</strong> Lorem
-						</p>
-						<p>
-							<strong>50</strong> Ipsum
-						</p>
-						<p>
-							<strong>25</strong> Dolor
-						</p>
-						<p>
-							<strong>10</strong> Sit
-						</p>
-						<p>
-							<strong>Endless</strong> Amet
-						</p>
-					</div>
-					<div class="panel-footer">
-						<h3>$49</h3>
-						<h4>per month</h4>
-						<button class="btn btn-lg">Sign Up</button>
-					</div>
-				</div>
-			</div>
-		</div>
+
 	</div>
+
 
 	<!-- Container (Contact Section) -->
 	<div id="contact" class="container-fluid bg-grey">
 		<h2 class="text-center">CONTACT</h2>
-		<div class="row">
-			<div class="col-sm-5">
+		<div class="row ">
+			<div class=" text-center">
 				<p>Contact us and we'll get back to you within 24 hours.</p>
 				<p>
-					<span class="glyphicon glyphicon-map-marker"></span> Chicago, US
+					<span class="glyphicon glyphicon-map-marker"></span> Los Angeles, US
 				</p>
 				<p>
-					<span class="glyphicon glyphicon-phone"></span> +00 1515151515
+					<span class="glyphicon glyphicon-phone"></span> +1-323-500-0000
 				</p>
 				<p>
 					<span class="glyphicon glyphicon-envelope"></span>
-					myemail@something.com
+					simplyCaffeine@gmail.com
 				</p>
 			</div>
-			<div class="col-sm-7 slideanim">
-				<div class="row">
-					<div class="col-sm-6 form-group">
-						<input class="form-control" id="name" name="name"
-							placeholder="Name" type="text" required>
-					</div>
-					<div class="col-sm-6 form-group">
-						<input class="form-control" id="email" name="email"
-							placeholder="Email" type="email" required>
-					</div>
-				</div>
-				<textarea class="form-control" id="comments" name="comments"
-					placeholder="Comment" rows="5"></textarea>
-				<br>
-				<div class="row">
-					<div class="col-sm-12 form-group">
-						<button class="btn btn-default pull-right" type="submit">Send</button>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 
-	<!-- Add Google Maps -->
-	<div id="googleMap" style="height: 400px; width: 100%;"></div>
-	<script>
-		function myMap() {
-			var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-			var mapProp = {
-				center : myCenter,
-				zoom : 12,
-				scrollwheel : false,
-				draggable : false,
-				mapTypeId : google.maps.MapTypeId.ROADMAP
-			};
-			var map = new google.maps.Map(document.getElementById("googleMap"),
-					mapProp);
-			var marker = new google.maps.Marker({
-				position : myCenter
-			});
-			marker.setMap(map);
-		}
-	</script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-	<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+	
+	
 
 	<footer class="container-fluid text-center">
 		<a href="#myPage" title="To Top"> <span
 			class="glyphicon glyphicon-chevron-up"></span>
 		</a>
-		<p>
-			Bootstrap Theme Made By <a href="https://www.w3schools.com"
-				title="Visit w3schools">www.w3schools.com</a>
-		</p>
+	
 	</footer>
 
 	<script>

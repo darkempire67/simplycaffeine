@@ -59,10 +59,28 @@ public class Homepage extends HttpServlet {
 		// add the new entry to the oder
 		List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
 		coffeeEntries.add(coffeeEntry);
+		
+		String building = request.getParameter("building");
+		String roomNumber = request.getParameter("roomNumber");
+		String hour = request.getParameter("hour");
+		String minute = request.getParameter("minutes");
+		String period = request.getParameter("period");
+
+
+		// create a new order
+		OrderEntry entry = new OrderEntry(idSeed++, building, roomNumber, hour, minute, period);
+
+		// add the new entry to the order
+		List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
+		entries.add(entry);
 
 		// send data to the display order
 //		response.sendRedirect("DisplayOrder");
-		response.sendRedirect("CheckOut");
+		response.sendRedirect("Homepage");
+
+		// send data to the display order
+//		response.sendRedirect("DisplayOrder");
+//		response.sendRedirect("CheckOut");
 	}
 
 }

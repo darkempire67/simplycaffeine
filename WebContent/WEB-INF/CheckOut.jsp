@@ -145,7 +145,7 @@ input[type=submit] {
 
 							</tr>
 						</thead>
-						<tbody id="checked" onclick="myFunction()">
+						<tbody id="checked" >
 							<c:forEach items="${coffeeEntries}" var="coffeeEntry">
 								<tr>
 									<td class="text-center">${coffeeEntry.id}</td>
