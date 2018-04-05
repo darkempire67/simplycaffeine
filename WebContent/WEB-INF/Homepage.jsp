@@ -619,8 +619,9 @@ input[type=submit] {
 						<div class="addorder">
 							<form action="Homepage" method="post">
 								Qty: <input type="text" name="quantity" id="americano" /> <input
-									type="hidden" name="coffeeName" value="americano" />
-								<button type="button" class="btn btn-primary">Add to
+									type="hidden" name="coffeeName" value="Americano" />
+									 <input	type="hidden" name="price" value="3.00" />
+								<button type="submit" class="btn btn-primary">Add to
 									Order</button>
 
 							</form>
@@ -641,10 +642,13 @@ input[type=submit] {
 							<h4>A drink comprised of espresso and hot water.</h4>
 						</div>
 						<div class="addorder">
+						<form action="Homepage" method="post">
 							Qty: <input type="text" name="quantity" id="caffemocha" /> <input
-								type="hidden" name="coffeeName" value="caffemocha" />
-							<button type="button" class="btn btn-primary">Add to
+								type="hidden" name="coffeeName" value="Mocha" />
+								 <input	type="hidden" name="price" value="3.50" />
+							<button type="submit" class="btn btn-primary">Add to
 								Order</button>
+						</form>
 						</div>
 					</div>
 				</div>
@@ -666,10 +670,13 @@ input[type=submit] {
 						</div>
 
 						<div class="addorder">
+						<form action="Homepage" method="post">
 							Qty: <input type="text" name="quantity" id="caffelatte" /> <input
-								type="hidden" name="coffeeName" value="caffelatte" />
-							<button type="button" class="btn btn-primary">Add to
+								type="hidden" name="coffeeName" value="Latte" />
+								<input	type="hidden" name="price" value="3.50" />
+							<button type="submit" class="btn btn-primary">Add to
 								Order</button>
+						</form>
 						</div>
 					</div>
 				</div>
@@ -678,8 +685,7 @@ input[type=submit] {
 			<div class="col-sm-6">
 				<div class="choices">
 					<div class="picture">
-						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/espresso.jpg" />
+						<img src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/espresso.jpg" />
 					</div>
 
 					<div class="details">
@@ -689,11 +695,13 @@ input[type=submit] {
 						</div>
 
 						<div class="addorder">
+						<form action="Homepage" method="post">
 							Qty: <input type="text" name="quantity" id="espresso" /> <input
-								type="hidden" name="coffeeName" value="espresso" />
-							<button type="button" class="btn btn-primary">Add to
+								type="hidden" name="coffeeName" value="Espresso" />
+								<input	type="hidden" name="price" value="3.00" />
+							<button type="submit" class="btn btn-primary">Add to
 								Order</button>
-
+						</form>
 						</div>
 					</div>
 				</div>
@@ -795,13 +803,13 @@ input[type=submit] {
 						</legend>
 						 <label for="Building"> <span>Building:</span>
 							<strong><abbr title="required ">*</abbr></strong>
-						</label> <input type="text" id="building" name="building" class="form-control"  placeholder="Enter Building Name"/><br /> <br />
+						</label> <input type="text" id="building" name="building" class="form-control"  placeholder="Enter Building Name"/><br/>
 						<label for="Room#"> <span>Room Number :</span> <strong><abbr
 								title="required">*</abbr></strong>
 						</label> <input type="text" id="roomNumber" name="roomNumber" class="form-control"  placeholder="Enter Room Number" /> <br />
 					
-						<div class="form-group row form-inline">
-						<label for="hour"> <span> Hour</span>
+						<div class="form-group row form-inline container">
+						<label for="hour"> &ensp;  Hour
 						</label> <select class="col-sm-2 col-form-label form-control" id="hour" name="hour">
 							<option value="1">01</option>
 							<option value="2">02</option>
@@ -816,8 +824,8 @@ input[type=submit] {
 							<option value="11">11</option>
 							<option value="12">12</option>
 
-						</select> <label for="minutes"> <span> Minutes
-						</span>
+						</select> &ensp; <label for="minutes"> &ensp; Minutes
+						
 						</label> <select class="col-sm-2 col-form-label form-control" id="minutes" name="minutes">
 							<option value="00">00</option>
 							<option value="05">05</option>
@@ -834,23 +842,24 @@ input[type=submit] {
 
 						</select>  
 						</div>
+						<div class="container">
 						<label for="am"> <input  class="form-check form-check-inline" type="radio"
 							id="am" name="period" value="am" /> AM
 						</label> <label for="pm"> <input class="form-check form-check-inline" type="radio" id="pm"
 							name="period" value="pm" /> PM
 						</label>
 						 <br /> <br />
-						<h3>this is what you ordered...........................</h3>
-
-
+						<h3>This is what you ordered...........................</h3>
+					</div>
+			<div class="container">
 						<table class="table table-hover">
 							<thead class="thead-dark text-center">
 								<tr>
-									<th>Id</th>
-									<th>Coffee</th>
-									<th>Quantity</th>
-									<th>Cost</th>
-									<th>Total Cost</th>
+									<th class="text-center">Id</th>
+									<th class="text-center">Coffee</th>
+									<th class="text-center">Quantity</th>
+									<th class="text-center">Cost</th>
+									<th class="text-center">Total Cost</th>
 									<th></th>
 
 								</tr>
@@ -861,17 +870,18 @@ input[type=submit] {
 										<td class="text-center">${coffeeEntry.id}</td>
 										<td class="text-center">${coffeeEntry.coffeeName}</td>
 										<td class="text-center">${coffeeEntry.quantity}</td>
-										<td class="text-center">${coffeeEntry.cost}</td>
-										<td class="text-center">${coffeeEntry.cost}</td>
-										<%-- 	<td class="text-center">${coffeeEntry.period}</td> --%>
-										<td class="text-center"><a
-											href='Delivered?id=${coffeeEntry.id}'>Edit</a></td>
+										<td class="text-center">$${coffeeEntry.cost}</td>
+										<td class="text-center">$${coffeeEntry.totalCost}</td>
+									
+										<td class="btn"><a 
+											href='Delete?id=${coffeeEntry.id}' class="text-danger">Delete</a>
+										</td><td class="btn "><a  href='#' class="text-primary">Edit</a></td>	
 									</tr>
 								</c:forEach>
 
 							</tbody>
 						</table>
-
+			</div>
 					</fieldset>
 
 					<div class="submitButton">
@@ -952,13 +962,6 @@ input[type=submit] {
 				})
 	</script>
 
-	<!-- 	<div class="content">
-		<form action="Homepage" method="post">
-	
-			<div class="submitButton">
-				<input type="submit" name="order" value="Continue to checkout!" />
-			</div>
-		</form>
-	</div> -->
+
 </body>
 </html>

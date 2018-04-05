@@ -6,13 +6,18 @@ public class CoffeeEntry {
 	String coffeeName;
 	String quantity;
 	String cost;
+	Double totalCost;
 
-	public CoffeeEntry(Integer id, String coffeeName, String quantity, String cost) {
+	public CoffeeEntry(Integer id, String coffeeName, String quantity, String cost, Double totalCost) {
 		this.id = id;
 		this.coffeeName = coffeeName;
 		this.quantity = quantity;
 		this.cost = cost;
+		this.totalCost = totalCost;
+	}
 
+	public Double getTotalCost() {
+		return totalCost;
 	}
 
 	public Integer getId() {

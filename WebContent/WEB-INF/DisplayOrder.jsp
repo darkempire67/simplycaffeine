@@ -86,7 +86,7 @@ function myFunction() {
 						<td class="text-center">${entry.hour}</td>
 						<td class="text-center">${entry.minutes}</td>
 						<td class="text-center">${entry.period}</td>
-						<td class="text-center btn btn-primary"><a href='Delivered?id=${entry.id}'>Delivered</a></td>
+						<td class="text-center btn btn-outline-success"><a href='Delivered?id=${entry.id}'>Delivered</a></td>
 					</tr>
 				</c:forEach>
 

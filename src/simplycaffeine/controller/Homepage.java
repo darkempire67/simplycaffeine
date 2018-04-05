@@ -14,10 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import simplycaffeine.model.CoffeeEntry;
 import simplycaffeine.model.OrderEntry;
 
-/**
- * Servlet implementation class Homepage
- */
-
 @WebServlet(urlPatterns = "/Homepage", loadOnStartup = 1)
 public class Homepage extends HttpServlet {
 
@@ -48,19 +44,28 @@ public class Homepage extends HttpServlet {
 			throws ServletException, IOException {
 		// get the user input
 		String coffeeName = request.getParameter("coffeeName");
+		if(coffeeName != null){
 		String quantity = request.getParameter("quantity");
-		String cost = request.getParameter("value");
+		String cost = request.getParameter("price");
 
-
+		Double totalcost = Double.parseDouble(cost) * Integer.parseInt(quantity);
 
 		// create a new order
-		CoffeeEntry coffeeEntry = new CoffeeEntry(idSeed++, coffeeName, quantity, cost);
+		CoffeeEntry coffeeEntry = new CoffeeEntry(idSeed++, coffeeName, quantity, cost, totalcost);
 
 		// add the new entry to the oder
 		List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
+		
 		coffeeEntries.add(coffeeEntry);
+		}
 		
 		String building = request.getParameter("building");
+		
+		if(building == null){
+			response.sendRedirect("Homepage#checkout");
+		}else{
+		
+		
 		String roomNumber = request.getParameter("roomNumber");
 		String hour = request.getParameter("hour");
 		String minute = request.getParameter("minutes");
@@ -73,11 +78,12 @@ public class Homepage extends HttpServlet {
 		// add the new entry to the order
 		List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
 		entries.add(entry);
-
+		
 		// send data to the display order
 //		response.sendRedirect("DisplayOrder");
-		response.sendRedirect("Homepage");
-
+	response.sendRedirect("Homepage");
+	
+		}
 		// send data to the display order
 //		response.sendRedirect("DisplayOrder");
 //		response.sendRedirect("CheckOut");
