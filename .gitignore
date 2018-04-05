@@ -37,3 +37,6 @@
 !logo
 !logo/**
 
+!isolated
+!isolated/**
+
