@@ -535,15 +535,20 @@ input[type=submit] {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#myPage">Logo</a>
+				<img
+			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
+			width=10% height=10%>
+				<a class="navbar-brand" href="#myPage">SIFE</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="">${user.first}'s Page</a></li>				
 					<li><a href="#about">ABOUT</a></li>
 					<li><a href="#PRODUCTS">PRODUCTS</a></li>
 					<li><a href="#portfolio">PORTFOLIO</a></li>
 					<li><a href="#checkout">CHECKOUT</a></li>
 					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="Logout">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -551,7 +556,7 @@ input[type=submit] {
 
 	<div class="jumbotron text-center">
 		<img
-			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
+			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
 			width=50% height=auto>
 		<h1>Simply Caffeine</h1>
 		<p>We will deliver coffee to your class!</p>
@@ -607,7 +612,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/americano.jpg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/americano.jpg" />
 					</div>
 
 					<div class="details">
@@ -633,7 +638,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/cafemocha.jpg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/cafemocha.jpg" />
 					</div>
 
 					<div class="details">
@@ -660,7 +665,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/caffelatte.jpeg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/caffelatte.jpeg" />
 					</div>
 
 					<div class="details">
@@ -685,7 +690,7 @@ input[type=submit] {
 			<div class="col-sm-6">
 				<div class="choices">
 					<div class="picture">
-						<img src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/espresso.jpg" />
+						<img src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/espresso.jpg" />
 					</div>
 
 					<div class="details">

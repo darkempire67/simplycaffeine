@@ -10,8 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import simplycaffeine.model.CoffeeEntry;
+import simplycaffeine.model.NoteUser;
 import simplycaffeine.model.OrderEntry;
 
 @WebServlet(urlPatterns = "/Homepage", loadOnStartup = 1)
@@ -36,7 +38,19 @@ public class Homepage extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		// Get a reference to the session
+				HttpSession session = request.getSession();
+
+				// Get a reference to the NoteUser object stored in the session
+				NoteUser user = (NoteUser) session.getAttribute("user");
+
+				// If the User doesn't exist, then they didn't login. So, kick them back
+				// to Login
+				if (user == null) {
+					response.sendRedirect("Login");
+					return;
+				}
+				
 		request.getRequestDispatcher("/WEB-INF/Homepage.jsp").forward(request, response);
 	}
 
