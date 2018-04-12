@@ -5,142 +5,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Simply Caffeine</title>
-<!--
- <script>
-	$(window).scroll(function() {
-		var scroll = $(window).scrollTop();
-		$(".zoom img").css({
-			width : (100 + scroll / 5) + "%",
-			top : -(scroll / 10) + "%",
-			//		transform: "translate3d(-50%, -"+(scroll/100)+"%, 0) scale("+(100 + scroll/5)/100+")",
-			//Blur suggestion from @janwagner: https://codepen.io/janwagner/ in comments
-			"-webkit-filter" : "blur(" + (scroll / 200) + "px)",
-			filter : "blur(" + (scroll / 200) + "px)"
-		});
-	});
-</script>
-<style>
-body {
-	margin: 0px;
-}
-
-/* .header {
-	width: 100%;
-	height: 250px;
-	overflow: hidden;
-	background: #1C403E;
-	position: fixed;
-	vertical-align: middle;
-}
- */
-.zoom {
-	overflow: hidden;
-	padding-bottom: 55%;
-	width: 100%;
-	height: 250px;
-	overflow: hidden;
-	background: #1C403E;
-	position: fixed;
-	vertical-align: middle;
-	padding-bottom: 55%;
-	
-	@media	(min-width:600px){	
-	padding-bottom:	50%;
-	}
-
-@media ( min-width : 700px) {
-	padding-bottom: 45%;
-}
-
-}
-.zoom img {
-	position: fixed;
-	top: 0%;
-	left: 50%;
-	max-width: none;
-	transform: translateX(-50%);
-}
-
-.content {
-	/* position: fixed; */
-	 height: 100%;
-	width: 100%;
-	top: 250px;
-	overflow: auto;
-	padding-top: 20px;
-	margin-bottom: 20px;
-	background: #723D46;
-	text-align: center;
-	color: #DDDDD9;
-	padding: 1% 0;
-	position: relative;
-}
-
-.choices {
-	padding-bottom: 40px;
-}
-
-/*.picture{
-    vertical-align: middle;
-    display: table-cell;
-}
-
-.details{
-    vertical-align: top;
-    display: table-cell;
-}*/
-.picture img {
-	max-width: 25%;
-	min-width: 200px;
-	height: auto;
-}
-
-input[type="text"] {
-	width: 25px;
-	margin-right: 20px;
-}
-
-.submitButton {
-	position: fixed;
-	bottom: -4px;
-	right: 10px;
-	border-radius: 12px;
-	padding: 10px 30px;
-	border: 2px solid #4CAF50;
-	background-color: white;
-	color: black;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-}
-
-input[type=submit] {
-	border: none;
-	padding: 16px 32px;
-	text-decoration: none;
-	margin: 4px 2px;
-	cursor: pointer;
-	background-color: white;
-}
-
-.submitButton:hover, input[type=submit]:hover {
-	background-color: #4CAF50; /* Green */
-	color: white;
-}
-
-.submitButton:active {
-	background-color: #3e8e41;
-	color: black;
-	box-shadow: 0 5px #666;
-	transform: translateX(20px);
-}
-</style>
-
-</head>
- -->
-
-
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 <title>Simply Caffeine</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -335,102 +206,26 @@ footer .glyphicon {
 	visibility: visible;
 }
 
-@
-keyframes slide { 0% {
+@keyframes slide { 0% {
 	opacity: 0;
 	transform: translateY(70%);
 }
 
 100%
 {
-opacity
-
-
-
-
-
-
-:
-
-
-
- 
-
-
-
-1;
-transform
-
-
-
-
-
-
-:
-
-
-
- 
-
-
-
-translateY
-
-
-
-
-
-
-(0%);
+opacity: 1;
+transform: translateY(0%);
 }
 }
-@
--webkit-keyframes slide { 0% {
+@-webkit-keyframes slide { 0% {
 	opacity: 0;
 	-webkit-transform: translateY(70%);
 }
 
 100%
 {
-opacity
-
-
-
-
-
-
-:
-
-
-
- 
-
-
-
-1;
--webkit-transform
-
-
-
-
-
-
-:
-
-
-
- 
-
-
-
-translateY
-
-
-
-
-
-
-(0%);
+opacity: 1;
+-webkit-transform: translateY (0%);
 }
 }
 @media screen and (max-width: 768px) {
@@ -517,12 +312,7 @@ input[type=submit] {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-		<!-- 		<img
-			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
-			width=10% height=10%>
-				<a class="navbar-brand" href="#myPage">SIFE</a>
-		 --></div>
-
+	</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<img
 			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
@@ -532,7 +322,6 @@ input[type=submit] {
 					<li><a href="">${user.first}'s PAGE</a></li>				
 					<li><a href="#about">ABOUT</a></li>
 					<li><a href="#PRODUCTS">PRODUCTS</a></li>
-					
 					<li><a href="#checkout">CHECKOUT</a></li>
 					<li><a href="#contact">CONTACT</a></li>
 					<li><a href="Logout">LOGOUT</a></li>
@@ -701,10 +490,10 @@ input[type=submit] {
 		</div>
 	</div>
 
+
+
 	<!-- Container (checkout Section) -->
 	<div id="checkout" class="container-fluid">
-
-
 		<div class="checkout_panel form-group">
 			<div class="panel_body">
 				<form action="Homepage" method="post">
@@ -755,9 +544,9 @@ input[type=submit] {
 						</div>
 						<div class="container">
 						<label for="am"> <input  class="form-check form-check-inline" type="radio"
-							id="am" name="period" value="am" /> AM
+							id="am" name="period" value="AM" /> AM
 						</label> <label for="pm"> <input class="form-check form-check-inline" type="radio" id="pm"
-							name="period" value="pm" /> PM
+							name="period" value="PM" /> PM
 						</label>
 						 <br /> <br />
 						<h3>This is what you ordered...........................</h3>
@@ -770,7 +559,7 @@ input[type=submit] {
 									<th class="text-center">Coffee</th>
 									<th class="text-center">Quantity</th>
 									<th class="text-center">Cost</th>
-									<th class="text-center">Total Cost</th>
+									<th class="text-center"></th>
 									<th></th>
 
 								</tr>
@@ -783,13 +572,16 @@ input[type=submit] {
 										<td class="text-center">${coffeeEntry.quantity}</td>
 										<td class="text-center">$${coffeeEntry.cost}</td>
 										<td class="text-center">$${coffeeEntry.totalCost}</td>
-									
-										<td class="btn"><a 
-											href='Delete?id=${coffeeEntry.id}' class="text-danger">Delete</a>
-										</td><td class="btn "><a  href='#' class="text-primary">Edit</a></td>	
+										<td class="btn"><a href='Delete?id=${coffeeEntry.id}' class="text-danger">Delete</a>
+										</td><td class="btn "><a  href='Edit?id=${coffeeEntry.id}' class="text-primary">Edit</a></td>	
 									</tr>
 								</c:forEach>
-
+								<c:if test="${sumTotal != 0 }">
+								<tr>
+								<td class="text-center" colspan='4'><h4> Total</h4></td>
+								<td class="text-center"><h4>$${sumTotal}</h4></td>
+								</tr>
+								</c:if>
 							</tbody>
 						</table>
 			</div>

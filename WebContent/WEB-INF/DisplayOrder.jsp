@@ -12,53 +12,6 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous" />
 
- <!-- <style>
- .body {
-	
-   background-image: url("image/background.jpg");
-	
-}
-
-#header {
-	width: 100%;
-	height: 30px;
-	background-color: coral;
-	padding-bottom: 30px;
-	text-align: center;
-}
-
-table.GeneratedTable {
-	width: 40%;
-	background-color: #FFFFFF;
-	border-collapse: collapse;
-	border-width: 1px;
-	border-color: sandybrown;
-	border-style: solid;
-	color: #000000;
-	display: inline-table;
-	vertical-align: top;
-}
-
-table.GeneratedTable td, table.GeneratedTable th {
-	border-width: 1px;
-	border-color: #336600;
-	border-style: solid;
-	padding: 2px;
-}
-
-table.GeneratedTable thead {
-	background-color: sandybrown;
-	padding-top: 25px;
-}
-</style>  -->
-
-
-
-<!-- <script>
-function myFunction() {
-    document.getElementById("checked").style.color = "red";
-}
-</script> -->
 </head>
 
 <body>
@@ -68,28 +21,31 @@ function myFunction() {
 		<table class="table table-hover">
 			<thead class="thead-dark text-center">
 				<tr>
-					<th>Order Number</th>
-					<th> Name</th>
-					<th>Building</th>
-					<th>Room Number</th>
-					<th>Hour</th>
-					<th>Minutes</th>
-					<th>Period</th>
-					<th>Done</th>
+					<th>#</th>
+					<th>Name</th>
+					<th>Coffee</th>
+					<th>Quantity</th>
+					<th>Place</th>
+					<th>Time</th>
+					<th></th>
 				</tr>
 			</thead>
-			<tbody id="checked">
-				<c:forEach items="${entries}" var="entry">
+			<tbody>
+				<c:forEach items="${entries}" var="entry"> 
+				<c:forEach items="${coffeeEntries}"	var="coffeeEntry">
 					<tr>
 						<td class="text-center">${entry.id}</td>
 						<td class="text-center">${user.first}</td>
-						<td class="text-center">${entry.building}</td>
-						<td class="text-center">${entry.roomNumber}</td>
-						<td class="text-center">${entry.hour}</td>
-						<td class="text-center">${entry.minutes}</td>
-						<td class="text-center">${entry.period}</td>
-						<td class="text-center btn btn-outline-success"><a href='Delivered?id=${entry.id}'>Delivered</a></td>
+						<td class="text-center">${coffeeEntry.coffeeName}</td>
+						<td class="text-center">${coffeeEntry.quantity}</td>
+						<td class="text-center">${entry.building} &nbsp; ${entry.roomNumber}
+						</td>
+						<td class="text-center">${entry.hour}:${entry.minutes}&nbsp;
+							${entry.period}</td>
+						<td class="text-center btn btn-outline-success"><a
+							href='Delivered?id=${entry.id}'> &radic; </a></td>
 					</tr>
+				</c:forEach>
 				</c:forEach>
 
 			</tbody>

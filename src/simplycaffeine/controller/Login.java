@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import simplycaffeine.model.NoteUser;
+import simplycaffeine.model.User;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -72,12 +72,12 @@ public class Login extends HttpServlet {
 		out.println("</html>");
 	}
 
-	protected NoteUser getUser(String email, String password) {
+	protected User getUser(String email, String password) {
 
 		// For you to do...
-		ArrayList<NoteUser> users = (ArrayList<NoteUser>) getServletContext().getAttribute("users");
+		ArrayList<User> users = (ArrayList<User>) getServletContext().getAttribute("users");
 
-		for (NoteUser user : users) {
+		for (User user : users) {
 			if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
 				return user;
 			}
@@ -93,7 +93,7 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 
 		// find user
-		NoteUser user = getUser(email, password);
+		User user = getUser(email, password);
 
 		if (user == null) {
 			request.setAttribute("loginError", true);

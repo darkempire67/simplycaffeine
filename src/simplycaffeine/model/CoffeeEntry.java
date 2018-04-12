@@ -7,7 +7,8 @@ public class CoffeeEntry {
 	String quantity;
 	String cost;
 	Double totalCost;
-
+	Double sumTotal;
+	
 	public CoffeeEntry(Integer id, String coffeeName, String quantity, String cost, Double totalCost) {
 		this.id = id;
 		this.coffeeName = coffeeName;
@@ -16,8 +17,16 @@ public class CoffeeEntry {
 		this.totalCost = totalCost;
 	}
 
+	public void setTotalCost(Double totalCost) {
+		this.totalCost = totalCost;
+	}
+	
 	public Double getTotalCost() {
 		return totalCost;
+	}
+
+	public Double getSumTotal() {
+		return sumTotal;
 	}
 
 	public Integer getId() {

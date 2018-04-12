@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import simplycaffeine.model.NoteUser;
+import simplycaffeine.model.User;
 
 @WebServlet(urlPatterns = { "/Register" }, loadOnStartup = 1)
 public class Register extends HttpServlet {
@@ -24,11 +24,11 @@ public class Register extends HttpServlet {
 		super.init(config);
 
 		// Create the Array of Users
-		ArrayList<NoteUser> users = new ArrayList<NoteUser>();
-		users.add(new NoteUser("Albert", "Cervantes", "acervan5@calstatela.edu", "abcd"));
-		users.add(new NoteUser("John", "Doe", "john@doe.com", "abcd"));
-		users.add(new NoteUser("Joe", "Boxer", "joe@boxer.com", "abcd"));
-		users.add(new NoteUser("Mary", "Jane", "mary@jane.com", "abcd"));
+		ArrayList<User> users = new ArrayList<User>();
+		users.add(new User("Albert", "Cervantes", "acervan5@calstatela.edu", "abcd"));
+		users.add(new User("John", "Doe", "john@doe.com", "abcd"));
+		users.add(new User("Joe", "Boxer", "joe@boxer.com", "abcd"));
+		users.add(new User("Mary", "Jane", "mary@jane.com", "abcd"));
 
 		getServletContext().setAttribute("users", users);
 	}
@@ -130,7 +130,7 @@ public class Register extends HttpServlet {
 		out.println("</html>");
 	}
 
-	protected void displayWelcome(NoteUser user, HttpServletResponse response) throws ServletException, IOException {
+	protected void displayWelcome(User user, HttpServletResponse response) throws ServletException, IOException {
 		// Set the content type to HTML
 		response.setContentType("text/html");
 
@@ -235,8 +235,8 @@ public class Register extends HttpServlet {
 			doGet(request, response);
 		} else {
 
-			NoteUser newUser = new NoteUser(firstName, lastName, email, password1);
-			ArrayList<NoteUser> users = (ArrayList<NoteUser>) getServletContext().getAttribute("users");
+			User newUser = new User(firstName, lastName, email, password1);
+			ArrayList<User> users = (ArrayList<User>) getServletContext().getAttribute("users");
 			users.add(newUser);
 			displayWelcome(newUser, response);
 

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import simplycaffeine.model.CoffeeEntry;
 import simplycaffeine.model.OrderEntry;
 
 @WebServlet(urlPatterns = "/DisplayOrder")
@@ -22,18 +23,12 @@ public class DisplayOrder extends HttpServlet {
 		super();
 	}
 
-	public void init(ServletConfig config) throws ServletException {
+public void init(ServletConfig config) throws ServletException {
 		super.init(config);
+		List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
 
-		// create some test data for display
-		List<OrderEntry> entries = new ArrayList<OrderEntry>();
-		entries.add(new OrderEntry(1, "kh", "235","1","05","pm"));
-		entries.add(new OrderEntry(2, "sh", "235","1","05","pm"));
-
-		// stored the data somewhere that can be accessed by this servlet
-		// and other servlets.
-		getServletContext().setAttribute("entries", entries);
-	}
+		List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
+}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
