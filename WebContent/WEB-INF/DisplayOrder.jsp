@@ -69,6 +69,7 @@ function myFunction() {
 			<thead class="thead-dark text-center">
 				<tr>
 					<th>Order Number</th>
+					<th> Name</th>
 					<th>Building</th>
 					<th>Room Number</th>
 					<th>Hour</th>
@@ -81,6 +82,7 @@ function myFunction() {
 				<c:forEach items="${entries}" var="entry">
 					<tr>
 						<td class="text-center">${entry.id}</td>
+						<td class="text-center">${user.first}</td>
 						<td class="text-center">${entry.building}</td>
 						<td class="text-center">${entry.roomNumber}</td>
 						<td class="text-center">${entry.hour}</td>
