@@ -140,24 +140,6 @@ input[type=submit] {
 </head>
  -->
 
-<!-- 
-	<header class="zoom">
-		<img
-			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
-			height="250" />
-
-
-	</header>
-	
-	 -->
-<%-- 	<div class="header">
-		<center>
-			<img
-				src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
-				height="250" />
-		</center>
-	</div> --%>
-
 
 <title>Simply Caffeine</title>
 <meta charset="utf-8">
@@ -539,17 +521,18 @@ input[type=submit] {
 			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
 			width=10% height=10%>
 				<a class="navbar-brand" href="#myPage">SIFE</a>
-		 -->	</div>
+		 --></div>
+
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<img
 			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
-			width=10% height=10%>
+			width=5% height=auto>
 				<a class="navbar-brand text-xl" href="#myPage">SIFE</a>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="">${user.first}'s PAGE</a></li>				
 					<li><a href="#about">ABOUT</a></li>
 					<li><a href="#PRODUCTS">PRODUCTS</a></li>
-					<li><a href="#portfolio">PORTFOLIO</a></li>
+					
 					<li><a href="#checkout">CHECKOUT</a></li>
 					<li><a href="#contact">CONTACT</a></li>
 					<li><a href="Logout">LOGOUT</a></li>
@@ -715,87 +698,6 @@ input[type=submit] {
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-
-	<!-- Container (Portfolio Section) -->
-	<div id="portfolio" class="container-fluid text-center bg-grey">
-		<h2>Portfolio</h2>
-		<br>
-		<h4>What we have created</h4>
-		<div class="row text-center slideanim">
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="paris.jpg" alt="Paris" width="400" height="300">
-					<p>
-						<strong>Paris</strong>
-					</p>
-					<p>Yes, we built Paris</p>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="newyork.jpg" alt="New York" width="400" height="300">
-					<p>
-						<strong>New York</strong>
-					</p>
-					<p>We built New York</p>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-					<p>
-						<strong>San Francisco</strong>
-					</p>
-					<p>Yes, San Fran is ours</p>
-				</div>
-			</div>
-		</div>
-		<br>
-		<h2>What our customers say</h2>
-		<div id="myCarousel" class="carousel slide text-center"
-			data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<h4>
-						"WOW!! Best coffee on campus!!!"<br>
-						<span>Michael Roe, Vice President, Comment Box</span>
-					</h4>
-				</div>
-				<div class="item">
-					<h4>
-						"One word... WOW!!"<br>
-						<span>John Doe, Salesman, Rep Inc</span>
-					</h4>
-				</div>
-				<div class="item">
-					<h4>
-						"Could I... BE any more happy with this company?"<br>
-						<span>Chandler Bing, Actor, FriendsAlot</span>
-					</h4>
-				</div>
-			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button"
-				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#myCarousel" role="button"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
 		</div>
 	</div>
 
