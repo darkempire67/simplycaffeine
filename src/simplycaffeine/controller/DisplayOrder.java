@@ -32,9 +32,12 @@ public void init(ServletConfig config) throws ServletException {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		 // Set refresh, autoload time as 5 seconds
+		List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
+		
+		// Set refresh, autoload time as 5 seconds
 	      response.setIntHeader("Refresh", 5);
-		request.getRequestDispatcher("/WEB-INF/DisplayOrder.jsp").forward(request, response);
+	
+	      request.getRequestDispatcher("/WEB-INF/DisplayOrder.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

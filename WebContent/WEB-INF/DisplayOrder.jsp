@@ -31,13 +31,13 @@
 				</tr>
 			</thead>
 			<tbody>
+
 				<c:forEach items="${entries}" var="entry"> 
-				<c:forEach items="${coffeeEntries}"	var="coffeeEntry">
-					<tr>
+			<tr>
 						<td class="text-center">${entry.id}</td>
-						<td class="text-center">${user.first}</td>
-						<td class="text-center">${coffeeEntry.coffeeName}</td>
-						<td class="text-center">${coffeeEntry.quantity}</td>
+						<td class="text-center">${entry.first}</td>
+						<td class="text-center">${entry.coffeeName}</td>
+						<td class="text-center">${entry.quantity}</td>
 						<td class="text-center">${entry.building} &nbsp; ${entry.roomNumber}
 						</td>
 						<td class="text-center">${entry.hour}:${entry.minutes}&nbsp;
@@ -46,7 +46,7 @@
 							href='Delivered?id=${entry.id}'> &radic; </a></td>
 					</tr>
 				</c:forEach>
-				</c:forEach>
+	
 
 			</tbody>
 		</table>

@@ -19,7 +19,8 @@ import simplycaffeine.model.OrderEntry;
 @WebServlet(urlPatterns = "/Homepage", loadOnStartup = 1)
 public class Homepage extends HttpServlet {
 
-	int idSeed = 1;
+	int idSeed = 0;
+	int id = 0;
 	private static final long serialVersionUID = 1L;
 
 	public Homepage() {
@@ -31,9 +32,11 @@ public class Homepage extends HttpServlet {
 
 		List<OrderEntry> entries = new ArrayList<OrderEntry>();
 		List<CoffeeEntry> coffeeEntries = new ArrayList<CoffeeEntry>();
+		List<User> userEntries = new ArrayList<User>();
 
-		getServletContext().setAttribute("entries", entries);		
+		getServletContext().setAttribute("entries", entries);
 		getServletContext().setAttribute("coffeeEntries", coffeeEntries);
+		getServletContext().setAttribute("userEntries", userEntries);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -54,19 +57,28 @@ public class Homepage extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		HttpSession session = request.getSession();
+
+		User user = (User) session.getAttribute("user");
+
+		List<User> userEntries = (List<User>) getServletContext().getAttribute("userEntries");
+
+		List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
+
+		String firstName = user.getFirst();
 		String coffeeName = request.getParameter("coffeeName");
+		String quantity = request.getParameter("quantity");
+		String cost = request.getParameter("price");
+
 		if (coffeeName != null) {
-
-			String quantity = request.getParameter("quantity");
-			String cost = request.getParameter("price");
-
 			Double totalcost = Double.parseDouble(cost) * Integer.parseInt(quantity);
 
 			CoffeeEntry coffeeEntry = new CoffeeEntry(idSeed++, coffeeName, quantity, cost, totalcost);
 
-			List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
+			User userEntry = new User(firstName, coffeeName, quantity);
 
 			coffeeEntries.add(coffeeEntry);
+			userEntries.add(userEntry);
 
 			Double sumTotal = 0.00;
 			for (int i = 0; i < coffeeEntries.size(); i++) {
@@ -88,14 +100,28 @@ public class Homepage extends HttpServlet {
 			String hour = request.getParameter("hour");
 			String minute = request.getParameter("minutes");
 			String period = request.getParameter("period");
-
-		
+			String coffeeName1 = "";
+			String quantity1 = "";
 			
-			OrderEntry entry = new OrderEntry(idSeed++, building, roomNumber, hour, minute, period);
-
+			for (User userEntry : userEntries) {
+				if (user.getFirst().equals(userEntry.getFirst())) {
+					coffeeName1 = userEntry.getCoffeeName();
+					quantity1 = userEntry.getQuantity();
+				
+					OrderEntry entry = new OrderEntry(id++, firstName, coffeeName1, quantity1, building, roomNumber, hour,
+							minute, period);
+					
+					List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
+					entries.add(entry);
+				}
+			}
+			
+		/*	OrderEntry entry = new OrderEntry(idSeed++, firstName, coffeeName1, quantity1, building, roomNumber, hour,
+					minute, period);
+			
 			List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
 			entries.add(entry);
-
+*/
 			response.sendRedirect("Homepage");
 
 		}
