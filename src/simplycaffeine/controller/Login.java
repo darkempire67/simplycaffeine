@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import simplycaffeine.model.User;
+
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,6 +39,11 @@ public class Login extends HttpServlet {
 		out.println("        <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">");
 		out.println(
 				"        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">");
+		out.println(
+				"       <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png\">");
+		out.println(
+				"<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png\">");
+
 		out.println("        <title>Login</title>");
 		out.println("</head>");
 		out.println("<body>");

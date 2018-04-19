@@ -21,14 +21,12 @@
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato"
 	rel="stylesheet" type="text/css">
-<link href=""
-	rel="stylesheet" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-/* body {
+body {
 	font: 400 15px Lato, sans-serif;
 	line-height: 1.8;
 	color: #818181;
@@ -301,7 +299,7 @@ input[type=submit] {
 	font-weight: bold;
 	color: darkgreen;
 	font-weight: bold;
-} */
+}
 </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar"

@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import simplycaffeine.model.User;
 
 @WebServlet(urlPatterns = { "/Register" }, loadOnStartup = 1)
@@ -32,7 +31,6 @@ public class Register extends HttpServlet {
 
 		getServletContext().setAttribute("users", users);
 	}
-
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -68,6 +66,11 @@ public class Register extends HttpServlet {
 		out.println("        <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">");
 		out.println(
 				"        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">");
+		out.println(
+				"       <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png\">");
+		out.println(
+				"<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png\">");
+
 		out.println("        <title>Notes Register</title>");
 		out.println("</head>");
 		out.println("<body>");
@@ -114,7 +117,7 @@ public class Register extends HttpServlet {
 		out.println("    </div>");
 		out.println("    <div class=\"form-group\">");
 		out.println("        <label for=\"password\">Re-Enter Credit Card Number</label>");
-	
+
 		out.println("        <input class=\"form-control\" value=\"" + password2
 				+ "\" type=\"password\" name=\"password2\" id=\"password2\" placeholder=\"Re-enter your credit card number\">");
 
@@ -208,7 +211,6 @@ public class Register extends HttpServlet {
 
 		if (email.equals("") || email == null || !matcher.find()) {
 
-		
 			emailError = "You must provide an e-mail address.";
 			request.setAttribute("emailError", emailError);
 			hasError = true;
