@@ -28,60 +28,49 @@ public class Orders {
 		String[] dataSplit = new String[4];
 		Boolean found = false;
 		File outFile= new File("transactions.txt");
+		BufferedWriter writer =new BufferedWriter(new FileWriter(outFile.getAbsoluteFile(),true));
 		
 		while (fileeReader.hasNextLine()) {  // look for users creditcard num by using userID in UserInfo DB
 			newLine = fileeReader.nextLine();
 			dataSplit = newLine.split(",");
 			nextUserID = Integer.parseInt(dataSplit[0]);
 			cardNum = Integer.parseInt(dataSplit[1]);
-
+			
 			if (nextUserID == userID) { // ---------found user, now copy to txt file-> credit card num- 
-										//  			and amount to charge.
+							//  			and amount to charge.
 				found = true;
 				// print cardNum and amount to file.
-				String data ="charge credit card number "+cardNum +" total of: "+ amount;
-				BufferedWriter writer =new BufferedWriter(new FileWriter(outFile));
+				String data ="charge credit card number "+cardNum +" total of : "+ amount;
+				writer.write(data+"\n");
 				writer.newLine();
-				writer.append(data);
-				break;
 			}
 
 		}
+		fileeReader.close();		
+		writer.close();
 		if(!found) { // if not found exit order process
 			System.exit(1);
 		}
 		
+		
 	    
 	}
-	public ArrayList<StatUserInfoOneDrink> sendInfoToStats(ArrayList<StatUserInfoOneDrink> stats) {
-		
-		return  stats;//list of what user bought in one order --> qty , userID, coffeename
-		
-		
-		
+
+	public ArrayList<StatsUserInfoOneDrink> sendInfoToStats(ArrayList<StatsUserInfoOneDrink> stats) {
+
+		return stats;// list of what user bought in one order --> qty , userID, coffeename
+
 	}
-public ArrayList<ReplenishInfo> sendInfoToReplenish(ArrayList<ReplenishInfo> rep) {  //    list of what is bought send to replenish---> qty,coffeename
-		
-		
+
+	public ArrayList<ReplenishInfo> sendInfoToReplenish(ArrayList<ReplenishInfo> rep) { // list of what is bought send
+																						// to replenish--->
+																						// qty,coffeename
+
 		return rep;
 	}
-	
-	
-}
-class ReplenishInfo{
-	int qty;
-	String CoffeeName;
+
 }
 
-class StatUserInfoOneDrink{
-	int userID;
-	int qty;
-	String coffeeName;
-	public StatUserInfoOneDrink(int userid,int qty,String coffeeName) {
-		userID=userid;
-		this.qty=qty;
-		
-	}
-	
-}
+
+
 
