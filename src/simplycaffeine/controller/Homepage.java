@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import simplycaffeine.model.CoffeeEntry;
-import simplycaffeine.model.User;
 import simplycaffeine.model.OrderEntry;
+import simplycaffeine.model.ReplenishInfo;
+import simplycaffeine.model.StatUserInfoOneDrink;
+import simplycaffeine.model.User;
 
 @WebServlet(urlPatterns = "/Homepage", loadOnStartup = 1)
 public class Homepage extends HttpServlet {
@@ -33,7 +35,11 @@ public class Homepage extends HttpServlet {
 		List<OrderEntry> entries = new ArrayList<OrderEntry>();
 		List<CoffeeEntry> coffeeEntries = new ArrayList<CoffeeEntry>();
 		List<User> userEntries = new ArrayList<User>();
+		List<StatUserInfoOneDrink> stats = new ArrayList<StatUserInfoOneDrink>();
+		List<ReplenishInfo> reps = new ArrayList<ReplenishInfo>();
 
+		getServletContext().setAttribute("reps", reps);
+		getServletContext().setAttribute("stats", stats);
 		getServletContext().setAttribute("entries", entries);
 		getServletContext().setAttribute("coffeeEntries", coffeeEntries);
 		getServletContext().setAttribute("userEntries", userEntries);
@@ -64,6 +70,10 @@ public class Homepage extends HttpServlet {
 		List<User> userEntries = (List<User>) getServletContext().getAttribute("userEntries");
 
 		List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
+
+		List<StatUserInfoOneDrink> stats = (List<StatUserInfoOneDrink>) getServletContext().getAttribute("stats");
+
+		List<ReplenishInfo> reps = (List<ReplenishInfo>) getServletContext().getAttribute("reps");
 
 		String firstName = user.getFirst();
 		String coffeeName = request.getParameter("coffeeName");
@@ -102,27 +112,28 @@ public class Homepage extends HttpServlet {
 			String period = request.getParameter("period");
 			String coffeeName1 = "";
 			String quantity1 = "";
-			
+			int userId;
 			for (User userEntry : userEntries) {
 				if (user.getFirst().equals(userEntry.getFirst())) {
 					coffeeName1 = userEntry.getCoffeeName();
 					quantity1 = userEntry.getQuantity();
+					userId = userEntry.getId();
 				
-					OrderEntry entry = new OrderEntry(id++, firstName, coffeeName1, quantity1, building, roomNumber, hour,
-							minute, period);
-					
+					OrderEntry entry = new OrderEntry(id++, firstName, coffeeName1, quantity1, building, roomNumber,
+							hour, minute, period);
 					List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
 					entries.add(entry);
+					
+					StatUserInfoOneDrink stat = new StatUserInfoOneDrink(userId, quantity1, coffeeName1);
+					stats.add(stat);
+					
+					ReplenishInfo rep = new ReplenishInfo(quantity1, coffeeName);
+					reps.add(rep);
+
+				
 				}
 			}
-			
-		
-		/*	OrderEntry entry = new OrderEntry(idSeed++, firstName, coffeeName1, quantity1, building, roomNumber, hour,
-					minute, period);
-			
-			List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
-			entries.add(entry);
-*/
+
 			response.sendRedirect("Homepage");
 
 		}
