@@ -110,7 +110,7 @@ h4 {
 	font-style: normal;
 }
 
-.panel {
+/* .panel {
 	border: 1px solid #1C403E;
 	border-radius: 0 !important;
 	transition: box-shadow 0.5s;
@@ -154,7 +154,7 @@ h4 {
 	margin: 15px 0;
 	background-color: #1C403E;
 	color: #fff;
-}
+} */
 
 .navbar {
 	margin-bottom: 0;
@@ -245,7 +245,7 @@ opacity: 1;
 	}
 }
 
-.checkout_panel {
+/* .checkout_panel {
 	font-family: 'Montserrat', sans-serif;
 	background: white;
 	box-shadow: 20px 20px 20px 0 rgba(.2, .1, .2, .1);
@@ -256,10 +256,11 @@ opacity: 1;
 	opacity: .75;
 	color: #1C403E;
 	background: white;
-}
+} */
 
 .submitButton {
-	position: fixed;
+	text-align: center;
+/* 	position: fixed;
 	bottom: -4px;
 	right: 10px;
 	border-radius: 10px;
@@ -267,21 +268,21 @@ opacity: 1;
 	border: 2px solid #1C403E;
 	background-color: white;
 	color: black;
-	-webkit-transition-duration: 0.s; /* Safari */
-	transition-duration: 0.s;
+	-webkit-transition-duration: 0.s; 
+	transition-duration: 0.s; */
 }
 
-input[type=submit] {
+/* input[type=submit] {
 	border: none;
 	padding: 16px 32px;
 	text-decoration: none;
 	margin: 4px 2px;
 	cursor: pointer;
 	background-color: white;
-}
+} */
 
-.submitButton:hover, input[type=submit]:hover {
-	background-color: #1C403E; /* Green */
+/* .submitButton:hover, input[type=submit]:hover {
+	background-color: #1C403E; 
 	color: white;
 }
 
@@ -290,7 +291,7 @@ input[type=submit] {
 	color: black;
 	box-shadow: 0 5px #666;
 	transform: translateX(20px);
-}
+}  */
 
 .legendTag {
 	font-family: cursive;
@@ -298,6 +299,11 @@ input[type=submit] {
 	font-weight: bold;
 	color: darkgreen;
 	font-weight: bold;
+}
+
+.column {
+    float: left;
+    width: 12%;
 }
 </style>
 </head>
@@ -498,18 +504,20 @@ input[type=submit] {
 			<div class="panel_body">
 				<form action="Homepage" method="post">
 					<fieldset>
+						
 						<legend class="legendTag">
 							 CheckOut....
 						</legend>
+				<div class="column">
 						 <label for="Building"> <span>Building:</span>
 							<strong><abbr title="required ">*</abbr></strong>
 						</label> <input type="text" id="building" name="building" class="form-control"  placeholder="Enter Building Name"/><br/>
 						<label for="Room#"> <span>Room Number :</span> <strong><abbr
 								title="required">*</abbr></strong>
 						</label> <input type="text" id="roomNumber" name="roomNumber" class="form-control"  placeholder="Enter Room Number" /> <br />
-					
+						<p>Hour &nbsp; Minutes</p>
 						<div class="form-group row form-inline container">
-						<label for="hour"> &ensp;  Hour
+						<label for="hour"> &ensp;  
 						</label> <select class="col-sm-2 col-form-label form-control" id="hour" name="hour">
 							<option value="1">01</option>
 							<option value="2">02</option>
@@ -524,8 +532,7 @@ input[type=submit] {
 							<option value="11">11</option>
 							<option value="12">12</option>
 
-						</select> &ensp; <label for="minutes"> &ensp; Minutes
-						
+						</select> &ensp; <label for="minutes"> &ensp; 			
 						</label> <select class="col-sm-2 col-form-label form-control" id="minutes" name="minutes">
 							<option value="00">00</option>
 							<option value="05">05</option>
@@ -549,9 +556,11 @@ input[type=submit] {
 							name="period" value="PM" /> PM
 						</label>
 						 <br /> <br />
-						<h3>This is what you ordered...........................</h3>
 					</div>
+			</div>
+			<div class="column">
 			<div class="container">
+				<h3>This is what you ordered...........................</h3>
 						<table class="table table-hover">
 							<thead class="thead-dark text-center">
 								<tr>
@@ -591,6 +600,7 @@ input[type=submit] {
 						<input type="submit" name="order" value="Order my Coffee!" />
 					</div>
 				</form>
+				</div>
 
 			</div>
 		</div>
