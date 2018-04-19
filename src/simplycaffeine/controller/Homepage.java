@@ -116,6 +116,7 @@ public class Homepage extends HttpServlet {
 				}
 			}
 			
+		
 		/*	OrderEntry entry = new OrderEntry(idSeed++, firstName, coffeeName1, quantity1, building, roomNumber, hour,
 					minute, period);
 			

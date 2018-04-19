@@ -6,8 +6,8 @@
 <html lang="en">
 <head>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -21,12 +21,14 @@
 	rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato"
 	rel="stylesheet" type="text/css">
+<link href=""
+	rel="stylesheet" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-body {
+/* body {
 	font: 400 15px Lato, sans-serif;
 	line-height: 1.8;
 	color: #818181;
@@ -259,7 +261,7 @@ opacity: 1;
 }
 
 .submitButton {
-	position: fixed;
+ 	position: fixed; 
 	bottom: -4px;
 	right: 10px;
 	border-radius: 10px;
@@ -289,7 +291,8 @@ input[type=submit] {
 	background-color: #3e8e41;
 	color: black;
 	box-shadow: 0 5px #666;
-	transform: translateX(20px);
+/*	transform: translateX(20px);
+*/
 }
 
 .legendTag {
@@ -298,7 +301,7 @@ input[type=submit] {
 	font-weight: bold;
 	color: darkgreen;
 	font-weight: bold;
-}
+} */
 </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar"
