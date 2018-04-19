@@ -81,9 +81,9 @@ public class Homepage extends HttpServlet {
 			userEntries.add(userEntry);
 
 			Double sumTotal = 0.00;
+			
 			for (int i = 0; i < coffeeEntries.size(); i++) {
 				sumTotal += coffeeEntries.get(i).getTotalCost();
-
 			}
 
 			request.getServletContext().setAttribute("sumTotal", sumTotal);

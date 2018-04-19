@@ -25,8 +25,12 @@ public class DeleteCoffeeEntry extends HttpServlet {
 		for (CoffeeEntry entry : coffeeEntries)
 			if (entry.getId().equals(id)) {
 				coffeeEntries.remove(entry);
+				
 				break;
-			}
+		}
+		
+		double sumTotal = 0.00;
+		request.getServletContext().setAttribute("sumTotal", sumTotal);
 
 		response.sendRedirect("Homepage#checkout");
 	}

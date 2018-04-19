@@ -303,7 +303,7 @@ opacity: 1;
 
 .column {
     float: left;
-    width: 12%;
+    width: 17%;
 }
 </style>
 </head>
