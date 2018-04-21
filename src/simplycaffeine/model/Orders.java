@@ -12,7 +12,7 @@ public class Orders {
 	//-------------------------------   userID  card#  name     email
 	// csv file should be formatted as   1234   4325  John Doe   jd@gmail.com
 	
-	public void processOrder(int userID ,int amount) throws IOException {
+	public void processOrder(int userID ,double amount) throws IOException {
 		
 		
 		
