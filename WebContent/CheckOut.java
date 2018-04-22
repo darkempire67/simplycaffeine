@@ -36,7 +36,6 @@ public class CheckOut extends HttpServlet {
 		String hour = request.getParameter("hour");
 		String minute = request.getParameter("minutes");
 		String period = request.getParameter("period");
-		String user = request.getParameter("user");
 
 
 		// create a new order

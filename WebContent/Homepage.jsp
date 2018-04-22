@@ -5,9 +5,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180"
+	href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -206,26 +209,45 @@ footer .glyphicon {
 	visibility: visible;
 }
 
-@keyframes slide { 0% {
+@
+keyframes slide { 0% {
 	opacity: 0;
 	transform: translateY(70%);
 }
 
 100%
 {
-opacity: 1;
-transform: translateY(0%);
+opacity
+:
+ 
+1;
+transform
+:
+ 
+translateY
+(0%);
+
+
 }
 }
-@-webkit-keyframes slide { 0% {
+@
+-webkit-keyframes slide { 0% {
 	opacity: 0;
 	-webkit-transform: translateY(70%);
 }
 
 100%
 {
-opacity: 1;
--webkit-transform: translateY (0%);
+opacity
+:
+ 
+1;
+-webkit-transform
+:
+ 
+translateY
+ 
+(0%);
 }
 }
 @media screen and (max-width: 768px) {
@@ -312,14 +334,14 @@ input[type=submit] {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-	</div>
+			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
-			<img
-			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
-			width=5% height=auto>
-				<a class="navbar-brand text-xl" href="#myPage">SIFE</a>
+				<img
+					src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
+					width=5% height=auto><a class="navbar-brand text-xl"
+					href="#myPage">SIFE</a>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="">${user.first}'s PAGE</a></li>				
+					<li><a href="">${user.first}'s PAGE</a></li>
 					<li><a href="#about">ABOUT</a></li>
 					<li><a href="#PRODUCTS">PRODUCTS</a></li>
 					<li><a href="#checkout">CHECKOUT</a></li>
@@ -353,11 +375,12 @@ input[type=submit] {
 					will include: images of the drink options, a description of each
 					drink, price per drink, and customers can buy multiples of each
 					item as well. Once they have finalized their order they will be
-					redirected to a secondary page, “Checkout” page, in which they will
-					be presented with the estimated time of delivery and total cost.
-					Once the order is placed the customer will be redirected again to a
-					new page that will confirm their order has been processed and
-					countdown of the estimated delivery time will be prompted.</h4>
+					redirected to a secondary page, “Checkout” page, in which they
+					will be presented with the estimated time of delivery and total
+					cost. Once the order is placed the customer will be redirected
+					again to a new page that will confirm their order has been
+					processed and countdown of the estimated delivery time will be
+					prompted.</h4>
 				<br>
 				<h4>When the order is processed the orders will be sent to a
 					webpage only viewable to the coffee shop. This page will have a
@@ -400,8 +423,8 @@ input[type=submit] {
 						<div class="addorder">
 							<form action="Homepage" method="post">
 								Qty: <input type="text" name="quantity" id="americano" /> <input
-									type="hidden" name="coffeeName" value="Americano" />
-									 <input	type="hidden" name="price" value="3.00" />
+									type="hidden" name="coffeeName" value="Americano" /> <input
+									type="hidden" name="price" value="3.00" />
 								<button type="submit" class="btn btn-primary">Add to
 									Order</button>
 
@@ -423,13 +446,13 @@ input[type=submit] {
 							<h4>A drink comprised of espresso and hot water.</h4>
 						</div>
 						<div class="addorder">
-						<form action="Homepage" method="post">
-							Qty: <input type="text" name="quantity" id="caffemocha" /> <input
-								type="hidden" name="coffeeName" value="Mocha" />
-								 <input	type="hidden" name="price" value="3.50" />
-							<button type="submit" class="btn btn-primary">Add to
-								Order</button>
-						</form>
+							<form action="Homepage" method="post">
+								Qty: <input type="text" name="quantity" id="caffemocha" /> <input
+									type="hidden" name="coffeeName" value="Mocha" /> <input
+									type="hidden" name="price" value="3.50" />
+								<button type="submit" class="btn btn-primary">Add to
+									Order</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -451,13 +474,13 @@ input[type=submit] {
 						</div>
 
 						<div class="addorder">
-						<form action="Homepage" method="post">
-							Qty: <input type="text" name="quantity" id="caffelatte" /> <input
-								type="hidden" name="coffeeName" value="Latte" />
-								<input	type="hidden" name="price" value="3.50" />
-							<button type="submit" class="btn btn-primary">Add to
-								Order</button>
-						</form>
+							<form action="Homepage" method="post">
+								Qty: <input type="text" name="quantity" id="caffelatte" /> <input
+									type="hidden" name="coffeeName" value="Latte" /> <input
+									type="hidden" name="price" value="3.50" />
+								<button type="submit" class="btn btn-primary">Add to
+									Order</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -466,7 +489,8 @@ input[type=submit] {
 			<div class="col-sm-6">
 				<div class="choices">
 					<div class="picture">
-						<img src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/espresso.jpg" />
+						<img
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/espresso.jpg" />
 					</div>
 
 					<div class="details">
@@ -476,13 +500,13 @@ input[type=submit] {
 						</div>
 
 						<div class="addorder">
-						<form action="Homepage" method="post">
-							Qty: <input type="text" name="quantity" id="espresso" /> <input
-								type="hidden" name="coffeeName" value="Espresso" />
-								<input	type="hidden" name="price" value="3.00" />
-							<button type="submit" class="btn btn-primary">Add to
-								Order</button>
-						</form>
+							<form action="Homepage" method="post">
+								Qty: <input type="text" name="quantity" id="espresso" /> <input
+									type="hidden" name="coffeeName" value="Espresso" /> <input
+									type="hidden" name="price" value="3.00" />
+								<button type="submit" class="btn btn-primary">Add to
+									Order</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -498,93 +522,97 @@ input[type=submit] {
 			<div class="panel_body">
 				<form action="Homepage" method="post">
 					<fieldset>
-						<legend class="legendTag">
-							 CheckOut....
-						</legend>
-						 <label for="Building"> <span>Building:</span>
-							<strong><abbr title="required ">*</abbr></strong>
-						</label> <input type="text" id="building" name="building" class="form-control"  placeholder="Enter Building Name"/><br/>
-						<label for="Room#"> <span>Room Number :</span> <strong><abbr
+						<legend class="legendTag"> CheckOut.... </legend>
+						<label for="Building"> <span>Building:</span> <strong><abbr
+								title="required ">*</abbr></strong>
+						</label> <input type="text" id="building" name="building"
+							class="form-control" placeholder="Enter Building Name" /><br /> <label
+							for="Room#"> <span>Room Number :</span> <strong><abbr
 								title="required">*</abbr></strong>
-						</label> <input type="text" id="roomNumber" name="roomNumber" class="form-control"  placeholder="Enter Room Number" /> <br />
-					
+						</label> <input type="text" id="roomNumber" name="roomNumber"
+							class="form-control" placeholder="Enter Room Number" /> <br />
+
 						<div class="form-group row form-inline container">
-						<label for="hour"> &ensp;  Hour
-						</label> <select class="col-sm-2 col-form-label form-control" id="hour" name="hour">
-							<option value="1">01</option>
-							<option value="2">02</option>
-							<option value="3">03</option>
-							<option value="4">04</option>
-							<option value="5">05</option>
-							<option value="6">06</option>
-							<option value="7">07</option>
-							<option value="8">08</option>
-							<option value="9">09</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
+							<label for="hour"> &ensp; Hour </label> <select
+								class="col-sm-2 col-form-label form-control" id="hour"
+								name="hour">
+								<option value="1">01</option>
+								<option value="2">02</option>
+								<option value="3">03</option>
+								<option value="4">04</option>
+								<option value="5">05</option>
+								<option value="6">06</option>
+								<option value="7">07</option>
+								<option value="8">08</option>
+								<option value="9">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
 
-						</select> &ensp; <label for="minutes"> &ensp; Minutes
-						
-						</label> <select class="col-sm-2 col-form-label form-control" id="minutes" name="minutes">
-							<option value="00">00</option>
-							<option value="05">05</option>
-							<option value="10">10</option>
-							<option value="15">15</option>
-							<option value="20">20</option>
-							<option value="25">25</option>
-							<option value="30">30</option>
-							<option value="35">35</option>
-							<option value="40">40</option>
-							<option value="45">45</option>
-							<option value="50">50</option>
-							<option value="55">55</option>
+							</select> &ensp; <label for="minutes"> &ensp; Minutes </label> <select
+								class="col-sm-2 col-form-label form-control" id="minutes"
+								name="minutes">
+								<option value="00">00</option>
+								<option value="05">05</option>
+								<option value="10">10</option>
+								<option value="15">15</option>
+								<option value="20">20</option>
+								<option value="25">25</option>
+								<option value="30">30</option>
+								<option value="35">35</option>
+								<option value="40">40</option>
+								<option value="45">45</option>
+								<option value="50">50</option>
+								<option value="55">55</option>
 
-						</select>  
+							</select>
 						</div>
 						<div class="container">
-						<label for="am"> <input  class="form-check form-check-inline" type="radio"
-							id="am" name="period" value="AM" /> AM
-						</label> <label for="pm"> <input class="form-check form-check-inline" type="radio" id="pm"
-							name="period" value="PM" /> PM
-						</label>
-						 <br /> <br />
-						<h3>This is what you ordered...........................</h3>
-					</div>
-			<div class="container">
-						<table class="table table-hover">
-							<thead class="thead-dark text-center">
-								<tr>
-									<th class="text-center">Id</th>
-									<th class="text-center">Coffee</th>
-									<th class="text-center">Quantity</th>
-									<th class="text-center">Cost</th>
-									<th class="text-center"></th>
-									<th></th>
-
-								</tr>
-							</thead>
-							<tbody id="checked">
-								<c:forEach items="${coffeeEntries}" var="coffeeEntry">
+							<label for="am"> <input
+								class="form-check form-check-inline" type="radio" id="am"
+								name="period" value="AM" /> AM
+							</label> <label for="pm"> <input
+								class="form-check form-check-inline" type="radio" id="pm"
+								name="period" value="PM" /> PM
+							</label> <br /> <br />
+							<h3>This is what you ordered...........................</h3>
+						</div>
+						<div class="container">
+							<table class="table table-hover">
+								<thead class="thead-dark text-center">
 									<tr>
-										<td class="text-center">${coffeeEntry.id}</td>
-										<td class="text-center">${coffeeEntry.coffeeName}</td>
-										<td class="text-center">${coffeeEntry.quantity}</td>
-										<td class="text-center">$${coffeeEntry.cost}</td>
-										<td class="text-center">$${coffeeEntry.totalCost}</td>
-										<td class="btn"><a href='Delete?id=${coffeeEntry.id}' class="text-danger">Delete</a>
-										</td><td class="btn "><a  href='Edit?id=${coffeeEntry.id}' class="text-primary">Edit</a></td>	
+										<th class="text-center">Id</th>
+										<th class="text-center">Coffee</th>
+										<th class="text-center">Quantity</th>
+										<th class="text-center">Cost</th>
+										<th class="text-center"></th>
+										<th></th>
+
 									</tr>
-								</c:forEach>
-								<c:if test="${sumTotal != 0 }">
-								<tr>
-								<td class="text-center" colspan='4'><h4> Total</h4></td>
-								<td class="text-center"><h4>$${sumTotal}</h4></td>
-								</tr>
-								</c:if>
-							</tbody>
-						</table>
-			</div>
+								</thead>
+								<tbody id="checked">
+									<c:forEach items="${coffeeEntries}" var="coffeeEntry">
+										<tr>
+											<td class="text-center">${coffeeEntry.id}</td>
+											<td class="text-center">${coffeeEntry.coffeeName}</td>
+											<td class="text-center">${coffeeEntry.quantity}</td>
+											<td class="text-center">$${coffeeEntry.cost}</td>
+											<td class="text-center">$${coffeeEntry.totalCost}</td>
+											<td class="btn"><a href='Delete?id=${coffeeEntry.id}'
+												class="text-danger">Delete</a></td>
+											<td class="btn "><a href='Edit?id=${coffeeEntry.id}'
+												class="text-primary">Edit</a></td>
+										</tr>
+									</c:forEach>
+									<c:if test="${sumTotal != 0 }">
+										<tr>
+											<td class="text-center" colspan='4'><h4>Total</h4></td>
+											<td class="text-center"><h4>$${sumTotal}</h4></td>
+										</tr>
+									</c:if>
+								</tbody>
+							</table>
+						</div>
 					</fieldset>
 
 					<div class="submitButton">
@@ -605,7 +633,8 @@ input[type=submit] {
 			<div class=" text-center">
 				<p>Contact us and we'll get back to you within 24 hours.</p>
 				<p>
-					<span class="glyphicon glyphicon-map-marker"></span> Los Angeles, US
+					<span class="glyphicon glyphicon-map-marker"></span> Los Angeles,
+					US
 				</p>
 				<p>
 					<span class="glyphicon glyphicon-phone"></span> +1-323-500-0000
@@ -615,18 +644,18 @@ input[type=submit] {
 					simplyCaffeine@gmail.com
 				</p>
 			</div>
-			
+
 		</div>
 	</div>
 
-	
-	
+
+
 
 	<footer class="container-fluid text-center">
 		<a href="#myPage" title="To Top"> <span
 			class="glyphicon glyphicon-chevron-up"></span>
 		</a>
-	
+
 	</footer>
 
 	<script>

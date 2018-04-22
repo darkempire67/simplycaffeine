@@ -1,5 +1,8 @@
 package simplycaffeine.model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class OrderEntry {
 
@@ -9,55 +12,39 @@ public class OrderEntry {
 	String hour;
 	String minutes;
 	String period;
-	String firstName;
-	String coffeeName;
-	String quantity;
-	
-	public OrderEntry(Integer id, String firstName, String coffeeName, String quantity, String building, String roomNumber, String hour, String minutes, String period) {
+	int order1;
+	int order2;
+	int order3;
+	int order4;
+	Scanner input = new Scanner(System.in);
+	String fileName = "OrderStats.txt";
+	File file = new File(fileName);
+	StringBuilder orders;
+
+	public OrderEntry(Integer id, String building, String roomNumber, String hour, String minutes, String period) {
 		this.id = id;
-		this.firstName = firstName;
-		this.coffeeName = coffeeName;
-		this.quantity = quantity;
 		this.building = building;
 		this.roomNumber = roomNumber;
 		this.hour = hour;
 		this.minutes = minutes;
 		this.period = period;
-		
+		System.out.println("TESTING");
+
+		Scanner fileTest = null;
+		try {
+			fileTest = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found! Program will now exit.");
+			System.exit(1);
+		}
+
+		if (this.id == 1 || this.id == 2) {
+			while (fileTest.hasNextLine()) {
+				orders.append(fileTest.nextLine());
+			}
+		}
+		System.out.println(orders.toString());
 	}
-
-
-
-
-	public void setCoffeeName(String coffeeName) {
-		this.coffeeName = coffeeName;
-	}
-
-
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-
-
-
-	public String getFirst() {
-		return firstName;
-	}
-
-
-
-	public String getCoffeeName() {
-		return coffeeName;
-	}
-
-
-
-	public String getQuantity() {
-		return quantity;
-	}
-
-
 
 	public Integer getId() {
 		return id;
@@ -66,8 +53,6 @@ public class OrderEntry {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	
 
 	public String getPeriod() {
 		return period;
@@ -110,4 +95,3 @@ public class OrderEntry {
 	}
 
 }
-
