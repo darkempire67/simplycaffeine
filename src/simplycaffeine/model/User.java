@@ -5,20 +5,35 @@ public class User {
 	int id;
 	String coffeeName;
 	String quantity;
+	Double sumTotal;
 	static int count = 0;
 
-	public User(String first, String last, String email, String password) {
-		this.id = count++;
+	public User(int id,String first, String last, String email, String password) {
+		this.id = ++count;
 		this.first = first;
 		this.last = last;
 		this.email = email;
 		this.password = password;
 	}
 
-	public User(String first, String coffeeName, String quantity) {
+	public User(String first, String coffeeName, String quantity, Double sumTotal) {
 		this.first = first;
 		this.coffeeName = coffeeName;
 		this.quantity = quantity;
+		this.sumTotal = sumTotal;
+	}
+
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Double getSumTotal() {
+		return sumTotal;
+	}
+
+	public void setSumTotal(Double sumTotal) {
+		this.sumTotal = sumTotal;
 	}
 
 	public String getCoffeeName() {

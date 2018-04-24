@@ -19,15 +19,16 @@ import simplycaffeine.model.User;
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	int id = 1;
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 
 		// Create the Array of Users
 		ArrayList<User> users = new ArrayList<User>();
-		users.add(new User("Albert", "Cervantes", "acervan5@calstatela.edu", "abcd"));
-		users.add(new User("John", "Doe", "john@doe.com", "abcd"));
-		users.add(new User("Joe", "Boxer", "joe@boxer.com", "abcd"));
-		users.add(new User("Mary", "Jane", "mary@jane.com", "abcd"));
+		users.add(new User(1,"Cris", "Ramos", "cris@ramos.com", "abcd"));
+		users.add(new User(2,"Gian", "Tolentino", "gian@tolentino.com", "abcd"));
+		users.add(new User(3,"Leonardo", "Gallegos", "leonardo@gallegos.com", "abcd"));
+		users.add(new User(4,"Vay", "Tang", "vay@tang.com", "abcd"));
 
 		getServletContext().setAttribute("users", users);
 	}
@@ -71,7 +72,7 @@ public class Register extends HttpServlet {
 		out.println(
 				"<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png\">");
 
-		out.println("        <title>Notes Register</title>");
+		out.println("        <title>Register</title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<div class=\"container\">");
@@ -104,7 +105,7 @@ public class Register extends HttpServlet {
 
 		out.println("    </div>");
 		out.println("    <div class=\"form-group\">");
-		out.println("        <label for=\"password\">Password</label>");
+		out.println("        <label for=\"password\">Credit Card Number</label>");
 
 		if (passwordError != null) {
 			out.println("        <input class=\"form-control is-invalid\" value=\"" + password1
@@ -131,6 +132,7 @@ public class Register extends HttpServlet {
 		out.println("</div>");
 		out.println("</body>");
 		out.println("</html>");
+//		request.getRequestDispatcher("/WEB-INF/Register.jsp").forward(request, response);
 	}
 
 	protected void displayWelcome(User user, HttpServletResponse response) throws ServletException, IOException {
@@ -237,7 +239,7 @@ public class Register extends HttpServlet {
 			doGet(request, response);
 		} else {
 
-			User newUser = new User(firstName, lastName, email, password1);
+			User newUser = new User(id++,firstName, lastName, email, password1);
 			ArrayList<User> users = (ArrayList<User>) getServletContext().getAttribute("users");
 			users.add(newUser);
 			displayWelcome(newUser, response);

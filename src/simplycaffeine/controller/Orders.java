@@ -14,9 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
 
+import simplycaffeine.model.StatUserInfoOneDrink;
 import simplycaffeine.model.User;
 
 @WebServlet("/Orders")
@@ -33,34 +32,30 @@ public class Orders extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
 
-		User user = (User) session.getAttribute("user");
-
-		List<User> userEntries = (List<User>) getServletContext().getAttribute("userEntries");
-
-		// 0 1 2 3
-		// ------------------------------- userID card# name email
-		// csv file should be formatted as 1234 4325 John Doe jd@gmail.com
-
-		int userID = user.getId();
-		int quantity = 0;
-		for (User userEntry : userEntries) {
-			if (user.getFirst().equals(userEntry.getFirst())) {
-
-				quantity = Integer.parseInt(userEntry.getQuantity());
-				processOrder(userID, quantity);
-			}
+		List<StatUserInfoOneDrink> stats = (List<StatUserInfoOneDrink>) getServletContext().getAttribute("stats");
+		
+		for (StatUserInfoOneDrink stat : stats) {
+			int userID = stat.getUserID();
+			Double total = stat.getTotal();
+		
+			processOrder(userID, total);
 		}
 
 	}
 
-	public void processOrder(int userID, int amount) throws IOException {
+	public void processOrder(int userID, Double amount) throws IOException {
 
-		String userDB = "UserInfo.csv"; // make sure this file exists
+		String userDB = "/Users/V/eclipse/java-neon/eclipse/UserInfo.csv"; // make
+																			// sure
+																			// this
+																			// file
+																			// exists
 		File inFile = new File(userDB);
+		System.out.println("Attempting to read from file in: " + inFile.getCanonicalPath());
 		if (!inFile.exists()) {
-			JOptionPane.showMessageDialog(null, " File Doesnt exist");
+			// JOptionPane.showMessageDialog(null,
+			System.out.println(" File Doesnt exist");
 		}
 		Scanner fileeReader = new Scanner(inFile);
 		String newLine;
@@ -70,6 +65,7 @@ public class Orders extends HttpServlet {
 		Boolean found = false;
 		File outFile = new File("transactions.txt");
 
+		BufferedWriter writer = new BufferedWriter(new FileWriter(outFile.getAbsoluteFile(), true));
 		while (fileeReader.hasNextLine()) { // look for users creditcard num by
 											// using userID in UserInfo DB
 			newLine = fileeReader.nextLine();
@@ -82,25 +78,25 @@ public class Orders extends HttpServlet {
 										// and amount to charge.
 				found = true;
 				// print cardNum and amount to file.
-				String data = "charge credit card number " + cardNum + " total of: " + amount;
-				BufferedWriter writer = new BufferedWriter(new FileWriter(outFile));
+				String data = "Charge credit card Number "+ cardNum + " total of " + amount;
 				writer.newLine();
-				writer.append(data);
+				writer.write(data);
 				break;
 			}
-
 		}
+		fileeReader.close();
+		writer.close();
+
 		if (!found) { // if not found exit order process
 			System.exit(1);
 		}
 
 	}
 
-		protected void doPost(HttpServletRequest request, HttpServletResponse response)
-				throws ServletException, IOException {
-			// TODO Auto-generated method stub
-			doGet(request, response);
-		}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// doGet(request, response);
+	}
 
-	
 }

@@ -20,11 +20,21 @@ public class DeleteCoffeeEntry extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		Integer id = Integer.valueOf(request.getParameter("id"));
+		
 		List<CoffeeEntry> coffeeEntries = (List<CoffeeEntry>) getServletContext().getAttribute("coffeeEntries");
 		for (CoffeeEntry entry : coffeeEntries)
 			if (entry.getId().equals(id)) {
+				Double total = entry.getTotalCost();
+				Double sumtotal = (Double) request.getServletContext().getAttribute("sumTotal");
+			
+				sumtotal = sumtotal - total;
+				request.getServletContext().setAttribute("sumTotal", sumtotal);
+			
 				coffeeEntries.remove(entry);
+				
+				
 				break;
 			}
 
