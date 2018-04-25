@@ -345,7 +345,7 @@ opacity: 1;
 	</div>
 
 	<!-- Container (About Section) -->
-	<div id="about" class="container-fluid">
+	<div id="about" class="container-fluid bg-grey">
 		<div class="row">
 			<div class="col-sm-30">
 				<h2>About Simply Caffeine</h2>
@@ -499,7 +499,7 @@ opacity: 1;
 
 
 	<!-- Container (checkout Section) -->
-	<div id="checkout" class="container-fluid">
+	<div id="checkout" class="container-fluid bg-grey">
 		<div class="checkout_panel form-group">
 			<div class="panel_body">
 				<form action="Homepage" method="post">
@@ -609,7 +609,7 @@ opacity: 1;
 
 
 	<!-- Container (Contact Section) -->
-	<div id="contact" class="container-fluid bg-grey">
+	<div id="contact" class="container-fluid">
 		<h2 class="text-center">CONTACT</h2>
 		<div class="row ">
 			<div class=" text-center">
@@ -632,7 +632,7 @@ opacity: 1;
 	
 	
 
-	<footer class="container-fluid text-center">
+	<footer class="container-fluid text-center bg-grey">
 		<a href="#myPage" title="To Top"> <span
 			class="glyphicon glyphicon-chevron-up"></span>
 		</a>

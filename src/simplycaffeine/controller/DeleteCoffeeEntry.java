@@ -29,8 +29,7 @@ public class DeleteCoffeeEntry extends HttpServlet {
 				break;
 		}
 		
-		double sumTotal = 0.00;
-		request.getServletContext().setAttribute("sumTotal", sumTotal);
+		
 
 		response.sendRedirect("Homepage#checkout");
 	}
