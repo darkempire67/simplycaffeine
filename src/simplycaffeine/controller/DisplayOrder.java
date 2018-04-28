@@ -34,8 +34,8 @@ public void init(ServletConfig config) throws ServletException {
 			throws ServletException, IOException {
 		List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
 		
-		// Set refresh, autoload time as 5 seconds
-	      response.setIntHeader("Refresh", 5);
+		
+	      response.setIntHeader("Refresh", 30);
 	
 	      request.getRequestDispatcher("/WEB-INF/DisplayOrder.jsp").forward(request, response);
 	}

@@ -21,7 +21,7 @@ import simplycaffeine.model.User;
 @WebServlet(urlPatterns = "/Homepage", loadOnStartup = 1)
 public class Homepage extends HttpServlet {
 
-	int idSeed = 0;
+	int idSeed = 1;
 	int id = 0;
 	private static final long serialVersionUID = 1L;
 
@@ -81,34 +81,37 @@ public class Homepage extends HttpServlet {
 		String cost = request.getParameter("price");
 
 		if (coffeeName != null) {
-			
+
 			Double totalcost = Double.parseDouble(cost) * Integer.parseInt(quantity);
 
 			CoffeeEntry coffeeEntry = new CoffeeEntry(idSeed++, coffeeName, quantity, cost, totalcost);
 
 			coffeeEntries.add(coffeeEntry);
-			
+
 			Double sumTotal = 0.00;
+
 			for (int i = 0; i < coffeeEntries.size(); i++) {
 				sumTotal += coffeeEntries.get(i).getTotalCost();
 
 			}
-		
+
 			User userEntry = new User(firstName, coffeeName, quantity, sumTotal);
-			
+
 			userEntries.add(userEntry);
-			
+
 			request.getServletContext().setAttribute("sumTotal", sumTotal);
 		}
 
 		String building = request.getParameter("building");
-
-		if (building == null) {
+		String roomNumber = request.getParameter("roomNumber");
+	
+		if (building == null || building.isEmpty() || roomNumber.isEmpty() || roomNumber == null) {
+			
 			response.sendRedirect("Homepage#checkout");
-		} 
-		else {
-
-			String roomNumber = request.getParameter("roomNumber");
+		return;
+		}
+		if (building != null || roomNumber != null) {
+			/* String roomNumber = request.getParameter("roomNumber"); */
 			String hour = request.getParameter("hour");
 			String minute = request.getParameter("minutes");
 			String period = request.getParameter("period");
@@ -116,42 +119,40 @@ public class Homepage extends HttpServlet {
 			String quantity1 = "";
 			Double sumTotal = 0.0;
 			int userId;
-			
+
 			for (User userEntry : userEntries) {
 				if (user.getFirst().equals(userEntry.getFirst())) {
-					
+
 					coffeeName1 = userEntry.getCoffeeName();
 					quantity1 = userEntry.getQuantity();
 					userId = user.getId();
-				
+
 					sumTotal = userEntry.getSumTotal();
-					
+
 					OrderEntry entry = new OrderEntry(id++, firstName, coffeeName1, quantity1, building, roomNumber,
 							hour, minute, period);
-					
+
 					List<OrderEntry> entries = (List<OrderEntry>) getServletContext().getAttribute("entries");
 					entries.add(entry);
-					
+
 					StatUserInfoOneDrink stat = new StatUserInfoOneDrink(userId, sumTotal);
 					stats.add(stat);
-										
+
 					ReplenishInfo rep = new ReplenishInfo(quantity1, coffeeName);
 					reps.add(rep);
 
-				
 				}
 			}
-			
+
 			sumTotal = null;
-			
+
 			request.getServletContext().setAttribute("sumTotal", sumTotal);
-			
+
 			coffeeEntries.clear();
-			
+
 			response.sendRedirect("Homepage");
 
 		}
 
 	}
-
 }

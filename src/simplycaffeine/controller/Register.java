@@ -20,15 +20,16 @@ public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	int id = 1;
+
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 
 		// Create the Array of Users
 		ArrayList<User> users = new ArrayList<User>();
-		users.add(new User(1,"Cris", "Ramos", "cris@ramos.com", "abcd"));
-		users.add(new User(2,"Gian", "Tolentino", "gian@tolentino.com", "abcd"));
-		users.add(new User(3,"Leonardo", "Gallegos", "leonardo@gallegos.com", "abcd"));
-		users.add(new User(4,"Vay", "Tang", "vay@tang.com", "abcd"));
+		users.add(new User(1, "Cris", "Ramos", "cris@ramos.com", "abcd"));
+		users.add(new User(2, "Gian", "Tolentino", "gian@tolentino.com", "abcd"));
+		users.add(new User(3, "Leonardo", "Gallegos", "leonardo@gallegos.com", "abcd"));
+		users.add(new User(4, "Vay", "Tang", "vay@tang.com", "abcd"));
 
 		getServletContext().setAttribute("users", users);
 	}
@@ -61,6 +62,7 @@ public class Register extends HttpServlet {
 		// Generate the template HTML
 		out.println("<!DOCTYPE html>");
 		out.println("<html lang=\"en\">");
+
 		out.println("<head>");
 		out.println("    <meta charset=\"UTF-8\">");
 		out.println("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
@@ -71,13 +73,39 @@ public class Register extends HttpServlet {
 				"       <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png\">");
 		out.println(
 				"<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png\">");
+		out.println("        <link rel=\"stylesheet\" href=\"logo.css\">");
 
-		out.println("        <title>Register</title>");
+		out.println(" <title>Register</title>");
+
+		out.println("<style>");
+
+		out.println(
+				"@keyframes slide { 0% {	opacity: 0;	transform: translateY(70%);}100%{opacity: 1;transform: translateY(0%);}}");
+		out.println(
+				"@-webkit-keyframes slide { 0% {opacity: 0;	-webkit-transform: translateY(70%);}100%{opacity: 1;-webkit-transform: translateY (0%);}}");
+		out.println(
+				"@media screen and (max-width: 768px) {	.col-sm-4 {		text-align: center;		margin: 25px 0;	}	.btn-lg {		width: 100%;		margin-bottom: 35px;	}}");
+		out.println("@media screen and (max-width: 480px) {	.logo {		font-size: 150px;	}}");
+		out.println(
+				".jumbotron {	background-color: #1C403E;	color: #fff;	padding-bottom: 2px;	padding-top: 2px;	font-family: Montserrat, sans-serif;}");
+		out.println(" .picture img {	max-width: 10%;	min-width: 170px;	height: auto;}");
+
+		out.println("</style>");
+
 		out.println("</head>");
-		out.println("<body>");
+
+		out.println("<body  id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"60\">");
+
+		out.println("<div class=\"jumbotron text-center\">");
+		out.println(
+				"	<img src=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg\" width=20% height=10%>");
+		out.println("	<h3>Simply Caffeine</h3>");
+		out.println("<p>We will deliver coffee to your class!</p>");
+		out.println("</div>");
+
 		out.println("<div class=\"container\">");
 
-		out.println("<h1 class=\"display-1\">Register</h1>");
+		out.println("<h1 class=\"display-3\">Register</h1>");
 
 		out.println("<form action=\"Register\" method=\"post\">");
 		out.println("    <div class=\"form-group\">");
@@ -132,7 +160,8 @@ public class Register extends HttpServlet {
 		out.println("</div>");
 		out.println("</body>");
 		out.println("</html>");
-//		request.getRequestDispatcher("/WEB-INF/Register.jsp").forward(request, response);
+		// request.getRequestDispatcher("/WEB-INF/Register.jsp").forward(request,
+		// response);
 	}
 
 	protected void displayWelcome(User user, HttpServletResponse response) throws ServletException, IOException {
@@ -239,7 +268,7 @@ public class Register extends HttpServlet {
 			doGet(request, response);
 		} else {
 
-			User newUser = new User(id++,firstName, lastName, email, password1);
+			User newUser = new User(id++, firstName, lastName, email, password1);
 			ArrayList<User> users = (ArrayList<User>) getServletContext().getAttribute("users");
 			users.add(newUser);
 			displayWelcome(newUser, response);
