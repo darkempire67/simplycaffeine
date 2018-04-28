@@ -22,7 +22,7 @@ public class StatsUserInfoOneDrink {
 
 	public void updateDB() throws FileNotFoundException, UnsupportedEncodingException {
 		Scanner input = new Scanner(System.in);
-		String fileName = "OrderStats.txt";
+		String fileName = "OrderStats.csv";
 		File file = new File(fileName);
 		int[][] result = new int[10][5];
 
@@ -35,17 +35,22 @@ public class StatsUserInfoOneDrink {
 		while (fileTest.hasNext()) {
 			String temp = fileTest.nextLine();
 
-			String[] temp2 = temp.split(" ");
+			String[] temp2 = temp.split(",");
 			int index = Integer.parseInt(temp2[0]);
 			for (int i = 0; i < 5; i++) {
-				result[index - 1][i] = Integer.parseInt(temp2[i]);
+				if ((index - 1) >= 0) {
+					result[index - 1][i] = Integer.parseInt(temp2[i]);
+				} else {
+					result[index][i] = Integer.parseInt(temp2[i]);
+				}
+
 			}
 
 		}
 		updateAmount(result);
 		printToConsole(result);
 		getMostOrderedDrink(result);
-		// printToText(result);
+		printToText(result);
 	}
 
 	public void updateAmount(int[][] user) {
@@ -84,11 +89,13 @@ public class StatsUserInfoOneDrink {
 	}
 
 	public static void printToText(int[][] temp) throws FileNotFoundException, UnsupportedEncodingException {
-		PrintWriter writer = new PrintWriter("OrderStats.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("OrderStats.csv", "UTF-8");
 		StringBuilder output = new StringBuilder();
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 5; j++) {
-				output.append(temp[i][j] + " ");
+				if (temp[i][0] != 0) {
+					output.append(temp[i][j] + ",");
+				}
 			}
 			output.append("\n");
 		}

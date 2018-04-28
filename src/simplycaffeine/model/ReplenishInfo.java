@@ -21,7 +21,7 @@ public class ReplenishInfo {
 
 	public void updateDB() throws FileNotFoundException, UnsupportedEncodingException {
 		Scanner input = new Scanner(System.in);
-		String fileName = "ReplenishInfo.txt";
+		String fileName = "ReplenishInfo.csv";
 		File file = new File(fileName);
 		int[][] result = new int[4][2];
 
@@ -34,7 +34,7 @@ public class ReplenishInfo {
 		while (fileTest.hasNext()) {
 			String temp = fileTest.nextLine();
 
-			String[] temp2 = temp.split(" ");
+			String[] temp2 = temp.split(",");
 			int index = Integer.parseInt(temp2[0]);
 			for (int i = 0; i < 2; i++) {
 				result[index - 1][i] = Integer.parseInt(temp2[i]);
@@ -87,11 +87,11 @@ public class ReplenishInfo {
 	}
 
 	public static void printToText(int[][] temp) throws FileNotFoundException, UnsupportedEncodingException {
-		PrintWriter writer = new PrintWriter("ReplenishInfo.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("ReplenishInfo.csv", "UTF-8");
 		StringBuilder output = new StringBuilder();
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j <= 1; j++) {
-				output.append(temp[i][j] + " ");
+				output.append(temp[i][j] + ",");
 			}
 			output.append("\n");
 		}

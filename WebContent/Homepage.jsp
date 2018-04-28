@@ -218,16 +218,24 @@ keyframes slide { 0% {
 100%
 {
 opacity
+
+
 :
+
  
+
 1;
 transform
+
+
 :
+
  
+
 translateY
+
+
 (0%);
-
-
 }
 }
 @
@@ -239,14 +247,24 @@ translateY
 100%
 {
 opacity
+
+
 :
+
  
+
 1;
 -webkit-transform
+
+
 :
+
  
+
 translateY
+
  
+
 (0%);
 }
 }
@@ -526,8 +544,8 @@ input[type=submit] {
 						<label for="Building"> <span>Building:</span> <strong><abbr
 								title="required ">*</abbr></strong>
 						</label> <input type="text" id="building" name="building"
-							class="form-control" placeholder="Enter Building Name" /><br /> <label
-							for="Room#"> <span>Room Number :</span> <strong><abbr
+							class="form-control" placeholder="Enter Building Name" /><br />
+						<label for="Room#"> <span>Room Number :</span> <strong><abbr
 								title="required">*</abbr></strong>
 						</label> <input type="text" id="roomNumber" name="roomNumber"
 							class="form-control" placeholder="Enter Room Number" /> <br />
