@@ -10,11 +10,12 @@ public class ReplenishInfo {
 
 	int amount;
 	String itemName;
+	int maxAmount = 100;
 
 	public ReplenishInfo(int amount, String itemName) throws FileNotFoundException, UnsupportedEncodingException {
 		this.amount = amount;
 		this.itemName = itemName;
-		
+
 		updateDB();
 	}
 
@@ -22,7 +23,7 @@ public class ReplenishInfo {
 		Scanner input = new Scanner(System.in);
 		String fileName = "ReplenishInfo.txt";
 		File file = new File(fileName);
-		int[][] result = new int[3][1];
+		int[][] result = new int[4][2];
 
 		Scanner fileTest = null;
 		try {
@@ -33,9 +34,10 @@ public class ReplenishInfo {
 		while (fileTest.hasNext()) {
 			String temp = fileTest.nextLine();
 
-			for (int i = 0; i <= 1; i++) {
-				String[] temp1 = temp.split(" ");
-				result[Integer.parseInt(temp1[0])][i] = 1;
+			String[] temp2 = temp.split(" ");
+			int index = Integer.parseInt(temp2[0]);
+			for (int i = 0; i < 2; i++) {
+				result[index - 1][i] = Integer.parseInt(temp2[i]);
 			}
 
 		}
@@ -44,7 +46,7 @@ public class ReplenishInfo {
 		printToText(result);
 	}
 
-	public void updateAmount(int[][] item) {
+	public void updateAmount(int[][] item) throws FileNotFoundException, UnsupportedEncodingException {
 		int itemIndex = 0;
 		if (itemName.equals("Americano")) {
 			itemIndex = 0;
@@ -64,12 +66,21 @@ public class ReplenishInfo {
 
 		item[itemIndex][1] += amount;
 
+		int tempAmount = item[itemIndex][1];
+
+		PrintWriter writer = new PrintWriter("ReplenishNeeded.txt", "UTF-8");
+
+		if (tempAmount >= (maxAmount / 2.0)) {
+			writer.print(itemName + " needs to be replenished!");
+			writer.close();
+		}
+
 	}
 
 	public static void printToConsole(int[][] temp) {
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j <= 1; j++) {
-				System.out.print(temp[i][j]);
+				System.out.print(temp[i][j] + " ");
 			}
 			System.out.println();
 		}
@@ -80,7 +91,7 @@ public class ReplenishInfo {
 		StringBuilder output = new StringBuilder();
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j <= 1; j++) {
-				output.append(temp[i][j]);
+				output.append(temp[i][j] + " ");
 			}
 			output.append("\n");
 		}
