@@ -17,6 +17,7 @@
 !*.png
 !*.html
 !*.css
+!*.csv
 
 
 # MAC HIDDEN FILES
