@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ReplenishInfo {
 
-	int amount;
+	double amount;
 	String itemName;
 	int maxAmount = 100;
 
@@ -20,7 +20,6 @@ public class ReplenishInfo {
 	}
 
 	public void updateDB() throws FileNotFoundException, UnsupportedEncodingException {
-		Scanner input = new Scanner(System.in);
 		String fileName = "ReplenishInfo.csv";
 		File file = new File(fileName);
 		int[][] result = new int[4][2];

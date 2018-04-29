@@ -6,12 +6,12 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
-public class StatsUserInfoOneDrink {
-	int amount;
+public class StatUserInfoOneDrink {
+	double amount;
 	String itemName;
 	int userId;
 
-	public StatsUserInfoOneDrink(int userId, int amount, String itemName)
+	public StatUserInfoOneDrink(int userId, int amount, String itemName)
 			throws FileNotFoundException, UnsupportedEncodingException {
 		this.userId = userId;
 		this.amount = amount;
@@ -21,7 +21,6 @@ public class StatsUserInfoOneDrink {
 	}
 
 	public void updateDB() throws FileNotFoundException, UnsupportedEncodingException {
-		Scanner input = new Scanner(System.in);
 		String fileName = "OrderStats.csv";
 		File file = new File(fileName);
 		int[][] result = new int[10][5];
@@ -145,6 +144,14 @@ public class StatsUserInfoOneDrink {
 		}
 
 		System.out.println(result + " is the most popular drink");
+	}
+
+	public int getUserID() {
+		return userId;
+	}
+
+	public Double getTotal() {
+		return amount;
 	}
 
 }
