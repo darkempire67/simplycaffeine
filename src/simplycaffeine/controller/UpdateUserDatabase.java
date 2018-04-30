@@ -28,13 +28,13 @@ public class UpdateUserDatabase extends HttpServlet {
 	int userID;
 	static int[][] result = new int[10][5];
 	
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-
-		List<StatUserInfoOneDrink> userStats = new ArrayList<StatUserInfoOneDrink>();
-
-		getServletContext().setAttribute("userStats", userStats);
-	}
+//	public void init(ServletConfig config) throws ServletException {
+//		super.init(config);
+//
+//		List<StatUserInfoOneDrink> userStats = new ArrayList<StatUserInfoOneDrink>();
+//
+//		getServletContext().setAttribute("userStats", userStats);
+//	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -69,22 +69,19 @@ public class UpdateUserDatabase extends HttpServlet {
 				String[] temp2 = temp.split(",");
 				int index = Integer.parseInt(temp2[0]);
 				for (int i = 0; i < 5; i++) {
-					if ((index - 1) >= 0) {
-						result[index - 1][i] = Integer.parseInt(temp2[i].trim());
-					} else {
+				
 						result[index][i] = Integer.parseInt(temp2[i].trim());
-					}
-
+					
 				}
 
 			}
-			updateAmount(result);
-			// printToConsole(result);
+			updateAmount();
+			 printToConsole(result);
 			// getMostOrderedDrink(result);
 			printToText(result);
 		}
 
-		private void updateAmount(int[][] user) {
+		private void updateAmount() {
 			int itemIndex = 0;
 			if (itemName.equals("Americano")) {
 				itemIndex = 1;
@@ -102,7 +99,7 @@ public class UpdateUserDatabase extends HttpServlet {
 				itemIndex = 4;
 			}
 
-			user[userID][itemIndex] += amount;
+			result[userID][itemIndex] += amount;
 
 		}
 
@@ -123,9 +120,9 @@ public class UpdateUserDatabase extends HttpServlet {
 		
 		
 			
-			PrintWriter writer = new PrintWriter("/Users/V/eclipse/java-neon/eclipse/OrderStats.csv", "UTF-8");
+			PrintWriter writer = new PrintWriter("OrderStats.csv", "UTF-8");
 			StringBuilder output = new StringBuilder();
-			for (int i = 0; i < 10; i++) {
+			for (int i = 1; i < 10; i++) {
 				for (int j = 0; j < 5; j++) {
 					if (temp[i][0] != 0) {
 						output.append(temp[i][j] + ",");
@@ -182,9 +179,9 @@ public class UpdateUserDatabase extends HttpServlet {
 			System.out.println(output + " is the most popular drink");
 		}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+/*	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+*/
 }

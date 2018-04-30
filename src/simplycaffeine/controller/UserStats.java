@@ -60,7 +60,7 @@ public class UserStats extends HttpServlet {
 		out.println("<div class=\"container\">");
 
 		out.println("	<p class=\"text-right\"><a href=\"DisplayOrder\">Display Order</a>	</p>");
-		out.println("	<p class=\"text-right\"><a href=\"Inventory\">Inventory</a>	</p>");
+//		out.println("	<p class=\"text-right\"><a href=\"Inventory\">Inventory</a>	</p>");
 
 		for (StatUserInfoOneDrink userStat : userStats) {
 			int userID = userStat.getUserID();

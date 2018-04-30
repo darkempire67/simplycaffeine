@@ -22,7 +22,7 @@ import javax.servlet.http.HttpSession;
 import simplycaffeine.model.StatUserInfoOneDrink;
 import simplycaffeine.model.User;
 
-@WebServlet("/OrderSuccess")
+@WebServlet("/OrderSuces")
 public class OrdersWithDatabase extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -97,7 +97,7 @@ public class OrdersWithDatabase extends HttpServlet {
 
 		out.println("<div class=\"jumbotron text-center\">");
 		out.println(
-				"	<img src=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg\" width=30% height=20%>");
+				"	<img src=\"https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg\" width=10% height=20%>");
 		out.println("	<h3>Simply Caffeine</h3>");
 		out.println("<p>We will deliver coffee to your class!</p>");
 		out.println("</div>");

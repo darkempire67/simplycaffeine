@@ -28,13 +28,13 @@ public class UpdateReplenish extends HttpServlet {
 	int maxAmount = 10;
 
 
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
-
-		List<ReplenishInfo> reps = new ArrayList<ReplenishInfo>();
-
-		getServletContext().setAttribute("reps", reps);
-	}
+//	public void init(ServletConfig config) throws ServletException {
+//		super.init(config);
+//
+//		List<ReplenishInfo> reps = new ArrayList<ReplenishInfo>();
+//
+//		getServletContext().setAttribute("reps", reps);
+//	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
