@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import simplycaffeine.model.StatUserInfoOneDrink;
-import simplycaffeine.model.User;
 
 @WebServlet("/UpdateUserDatabase")
 public class UpdateUserDatabase extends HttpServlet {
@@ -26,27 +25,28 @@ public class UpdateUserDatabase extends HttpServlet {
   
 	int amount;
 	String itemName;
-	int userId;
+	int userID;
 	static int[][] result = new int[10][5];
 	
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 
-		List<User> userEntries = new ArrayList<User>();
+		List<StatUserInfoOneDrink> userStats = new ArrayList<StatUserInfoOneDrink>();
 
-		getServletContext().setAttribute("userEntries", userEntries);
+		getServletContext().setAttribute("userStats", userStats);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		List<StatUserInfoOneDrink> stats = (List<StatUserInfoOneDrink>) getServletContext().getAttribute("stats");
+		List<StatUserInfoOneDrink> userStats = (List<StatUserInfoOneDrink>) getServletContext().getAttribute("userStats");
 	
-		for (StatUserInfoOneDrink stat : stats) {
-			int userID = stat.getUserID();
-			Double total = stat.getTotal();
-			String coffeName = stat.getCoffeeName();
-			
+		for (StatUserInfoOneDrink userStat : userStats) {
+			 userID = userStat.getUserID();
+			 amount = userStat.getQty();
+			 itemName = userStat.getCoffeeName();
+		
+			 System.out.println(userID+ " " + amount + " " + itemName );
 			updateDB();
 		}
 
@@ -70,9 +70,9 @@ public class UpdateUserDatabase extends HttpServlet {
 				int index = Integer.parseInt(temp2[0]);
 				for (int i = 0; i < 5; i++) {
 					if ((index - 1) >= 0) {
-						result[index - 1][i] = Integer.parseInt(temp2[i]);
+						result[index - 1][i] = Integer.parseInt(temp2[i].trim());
 					} else {
-						result[index][i] = Integer.parseInt(temp2[i]);
+						result[index][i] = Integer.parseInt(temp2[i].trim());
 					}
 
 				}
@@ -102,7 +102,7 @@ public class UpdateUserDatabase extends HttpServlet {
 				itemIndex = 4;
 			}
 
-			user[userId][itemIndex] += amount;
+			user[userID][itemIndex] += amount;
 
 		}
 
@@ -120,7 +120,10 @@ public class UpdateUserDatabase extends HttpServlet {
 		}
 
 		public static void printToText(int[][] temp) throws FileNotFoundException, UnsupportedEncodingException {
-			PrintWriter writer = new PrintWriter("OrderStats.csv", "UTF-8");
+		
+		
+			
+			PrintWriter writer = new PrintWriter("/Users/V/eclipse/java-neon/eclipse/OrderStats.csv", "UTF-8");
 			StringBuilder output = new StringBuilder();
 			for (int i = 0; i < 10; i++) {
 				for (int j = 0; j < 5; j++) {

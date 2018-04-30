@@ -25,7 +25,7 @@ public class UpdateReplenish extends HttpServlet {
 
 	int amount = 0;
 	String itemName = "";
-	int maxAmount = 1000;
+	int maxAmount = 10;
 
 
 	public void init(ServletConfig config) throws ServletException {
@@ -148,7 +148,7 @@ public class UpdateReplenish extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+	//	doGet(request, response);
 	}
 
 }

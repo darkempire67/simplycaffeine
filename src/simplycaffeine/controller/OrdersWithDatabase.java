@@ -108,6 +108,7 @@ public class OrdersWithDatabase extends HttpServlet {
 			int userID = stat.getUserID();
 			Double total = stat.getTotal();
 
+			
 			// processOrder(userID, total);
 
 			String sql = "update usersinfo set charge = " + total + "where id = " + userID;
