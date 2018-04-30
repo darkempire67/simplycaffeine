@@ -9,6 +9,7 @@ Double total;
 	public StatUserInfoOneDrink(int userid, String qty, String coffeeName) {
 		this.userID = userid;
 		this.qty = Integer.parseInt(qty);
+		this.coffeeName = coffeeName;
 
 	}
 public StatUserInfoOneDrink(int userid, Double total){

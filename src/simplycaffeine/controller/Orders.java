@@ -47,13 +47,13 @@ public class Orders extends HttpServlet {
 	public void processOrder(int userID, Double amount) throws IOException {
 
 	//local host
-	//	String userDB = "/Users/V/eclipse/java-neon/eclipse/UserInfo.csv"; // make
+		String userDB = "/Users/V/eclipse/java-neon/eclipse/UserInfo.csv"; // make
 																			// sure
 																			// this
 																			// file
 																			// exists
-		//server
-		String userDB = "UserInfo.csv"; 
+//		//server
+//		String userDB = "UserInfo.csv"; 
 		File inFile = new File(userDB);
 		System.out.println("Attempting to read from file in: " + inFile.getCanonicalPath());
 		if (!inFile.exists()) {

@@ -19,6 +19,8 @@
 
 <body>
 	<div class="container">
+	<p class="text-right"><a href="UserStats">User Statistic</a>	</p>
+	<p class="text-right"><a href="Inventory">Inventory</a>	</p>
 		<h1 class="text-center">Current Orders</h1>
 
 		<table class="table table-hover">

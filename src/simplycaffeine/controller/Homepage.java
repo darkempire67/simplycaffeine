@@ -37,7 +37,9 @@ public class Homepage extends HttpServlet {
 		List<User> userEntries = new ArrayList<User>();
 		List<StatUserInfoOneDrink> stats = new ArrayList<StatUserInfoOneDrink>();
 		List<ReplenishInfo> reps = new ArrayList<ReplenishInfo>();
+		List<StatUserInfoOneDrink> userStats = new ArrayList<StatUserInfoOneDrink>();
 
+		getServletContext().setAttribute("userStats", userStats);
 		getServletContext().setAttribute("reps", reps);
 		getServletContext().setAttribute("stats", stats);
 		getServletContext().setAttribute("entries", entries);
@@ -73,6 +75,9 @@ public class Homepage extends HttpServlet {
 
 		List<StatUserInfoOneDrink> stats = (List<StatUserInfoOneDrink>) getServletContext().getAttribute("stats");
 
+		List<StatUserInfoOneDrink> userStats = (List<StatUserInfoOneDrink>) getServletContext()
+				.getAttribute("userStats");
+
 		List<ReplenishInfo> reps = (List<ReplenishInfo>) getServletContext().getAttribute("reps");
 
 		String firstName = user.getFirst();
@@ -104,11 +109,11 @@ public class Homepage extends HttpServlet {
 
 		String building = request.getParameter("building");
 		String roomNumber = request.getParameter("roomNumber");
-	
+
 		if (building == null || building.isEmpty() || roomNumber.isEmpty() || roomNumber == null) {
-			
+
 			response.sendRedirect("Homepage#checkout");
-		return;
+			return;
 		}
 		if (building != null || roomNumber != null) {
 			/* String roomNumber = request.getParameter("roomNumber"); */
@@ -138,7 +143,10 @@ public class Homepage extends HttpServlet {
 					StatUserInfoOneDrink stat = new StatUserInfoOneDrink(userId, sumTotal);
 					stats.add(stat);
 
-					ReplenishInfo rep = new ReplenishInfo(quantity1, coffeeName);
+					StatUserInfoOneDrink userStat = new StatUserInfoOneDrink(userId, quantity1, coffeeName1);
+					userStats.add(userStat);
+
+					ReplenishInfo rep = new ReplenishInfo(quantity1, coffeeName1);
 					reps.add(rep);
 
 				}
@@ -150,7 +158,7 @@ public class Homepage extends HttpServlet {
 
 			coffeeEntries.clear();
 
-			response.sendRedirect("Homepage");
+			response.sendRedirect("OrderSuccess");
 
 		}
 
