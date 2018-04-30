@@ -11,9 +11,10 @@ public class UpdateReplenishDataBase {
 
 	int amount;
 	String itemName;
-	int maxAmount = 100;
+	int maxAmount = 1000;
 
-	public UpdateReplenishDataBase(ArrayList<ReplenishInfo> input) throws FileNotFoundException, UnsupportedEncodingException {
+	public UpdateReplenishDataBase(ArrayList<ReplenishInfo> input)
+			throws FileNotFoundException, UnsupportedEncodingException {
 
 		for (int i = 0; i < input.size(); i++) {
 			this.amount = input.get(i).qty;
@@ -45,7 +46,7 @@ public class UpdateReplenishDataBase {
 
 		}
 		updateAmount(result);
-		//printToConsole(result);
+		// printToConsole(result);
 		printToText(result);
 	}
 
@@ -71,9 +72,8 @@ public class UpdateReplenishDataBase {
 
 		int tempAmount = item[itemIndex][1];
 
-		PrintWriter writer = new PrintWriter("ReplenishNeeded.txt", "UTF-8");
-
 		if (tempAmount >= (maxAmount / 2.0)) {
+			PrintWriter writer = new PrintWriter("ReplenishNeeded.txt", "UTF-8");
 			writer.print(itemName + " needs to be replenished!");
 			writer.close();
 		}
