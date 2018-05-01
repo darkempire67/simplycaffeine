@@ -9,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import simplycaffeine.model.CoffeeEntry;
+import simplycaffeine.model.User;
 
 @WebServlet("/Edit")
 public class EditCoffeeEntry extends HttpServlet {
@@ -26,6 +28,22 @@ public class EditCoffeeEntry extends HttpServlet {
 			if (coffeeEntry.getId() == id)
 				return coffeeEntry;
 
+		return null;
+	}
+	
+	protected User getUserEntry(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+
+		User user = (User) session.getAttribute("user");
+
+		int userid = user.getId();
+		List<User> userEntries = (List<User>) getServletContext().getAttribute("userEntries");
+		
+		for (User userEntry : userEntries){
+	System.out.print(userid + " " + userEntry.getId());
+			if (userEntry.getId() == userid)
+				return userEntry;
+		}
 		return null;
 	}
 
@@ -53,8 +71,9 @@ public class EditCoffeeEntry extends HttpServlet {
 
 		CoffeeEntry coffeeEntry = getEntry(request);
 
-		// If we can't find the entry, go back to the guestbook
-		if (coffeeEntry == null) {
+		User userEntry = getUserEntry(request);
+		
+		if (coffeeEntry == null || userEntry == null) {
 			response.sendRedirect("Homepage");
 			return;
 		}
@@ -66,7 +85,7 @@ public class EditCoffeeEntry extends HttpServlet {
 		out.println("	<br>");
 
 		out.println("	<input type=\"hidden\" name=\"id\" value=\"" + coffeeEntry.getId() + "\" >");
-
+System.out.print(coffeeEntry.getId() + " " + userEntry.getId());
 		out.println("Quantity: <input class=\"form-control \" type=\"text\" name=\"quantity\" value=\"" + coffeeEntry.getQuantity() + "\">");
 		out.println("	<br>");
 		
@@ -85,7 +104,10 @@ public class EditCoffeeEntry extends HttpServlet {
 
 		CoffeeEntry coffeeEntry = getEntry(request);
 		coffeeEntry.setQuantity(quantity);
-	
+
+		User userEntry = getUserEntry(request);
+		userEntry.setQuantity(quantity);
+		
 		String cost = coffeeEntry.getCost();
 		Double totalCost = Double.parseDouble(cost) * Integer.parseInt(quantity);
 		

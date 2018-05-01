@@ -17,6 +17,7 @@ public class User {
 	}
 
 	public User(String first, String coffeeName, String quantity, Double sumTotal) {
+		this.id = count;
 		this.first = first;
 		this.coffeeName = coffeeName;
 		this.quantity = quantity;

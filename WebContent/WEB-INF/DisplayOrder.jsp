@@ -6,9 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png">
-
+<link rel="icon" type="image/png" sizes="32x32"
+	href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png">
 <title>Current Orders</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -19,10 +20,12 @@
 
 <body>
 	<div class="container">
-	<p class="text-right"><a href="UserStats">User Statistic</a>	</p>
-<!--  	
-<p class="text-right"><a href="Inventory">Inventory</a>	</p>
--->
+		<div class="container">
+
+			<a class="text-left" href="UpdateUserDatabase">User Statistic</a> &nbsp;&nbsp;&nbsp;&nbsp;<a
+				class="text-right" href="UpdateReplenish">Inventory</a>
+
+		</div>
 		<h1 class="text-center">Current Orders</h1>
 
 		<table class="table table-hover">
@@ -39,21 +42,21 @@
 			</thead>
 			<tbody>
 
-				<c:forEach items="${entries}" var="entry"> 
-			<tr>
+				<c:forEach items="${entries}" var="entry">
+					<tr>
 						<td class="text-center">${entry.id}</td>
 						<td class="text-center">${entry.first}</td>
 						<td class="text-center">${entry.coffeeName}</td>
 						<td class="text-center">${entry.quantity}</td>
-						<td class="text-center">${entry.building} &nbsp; ${entry.roomNumber}
-						</td>
+						<td class="text-center">${entry.building}&nbsp;
+							${entry.roomNumber}</td>
 						<td class="text-center">${entry.hour}:${entry.minutes}&nbsp;
 							${entry.period}</td>
 						<td class="text-center btn btn-outline-success"><a
 							href='Delivered?id=${entry.id}'> &radic; </a></td>
 					</tr>
 				</c:forEach>
-	
+
 
 			</tbody>
 		</table>
