@@ -5,160 +5,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Simply Caffeine</title>
-<!--
- <script>
-	$(window).scroll(function() {
-		var scroll = $(window).scrollTop();
-		$(".zoom img").css({
-			width : (100 + scroll / 5) + "%",
-			top : -(scroll / 10) + "%",
-			//		transform: "translate3d(-50%, -"+(scroll/100)+"%, 0) scale("+(100 + scroll/5)/100+")",
-			//Blur suggestion from @janwagner: https://codepen.io/janwagner/ in comments
-			"-webkit-filter" : "blur(" + (scroll / 200) + "px)",
-			filter : "blur(" + (scroll / 200) + "px)"
-		});
-	});
-</script>
-<style>
-body {
-	margin: 0px;
-}
-
-/* .header {
-	width: 100%;
-	height: 250px;
-	overflow: hidden;
-	background: #1C403E;
-	position: fixed;
-	vertical-align: middle;
-}
- */
-.zoom {
-	overflow: hidden;
-	padding-bottom: 55%;
-	width: 100%;
-	height: 250px;
-	overflow: hidden;
-	background: #1C403E;
-	position: fixed;
-	vertical-align: middle;
-	padding-bottom: 55%;
-	
-	@media	(min-width:600px){	
-	padding-bottom:	50%;
-	}
-
-@media ( min-width : 700px) {
-	padding-bottom: 45%;
-}
-
-}
-.zoom img {
-	position: fixed;
-	top: 0%;
-	left: 50%;
-	max-width: none;
-	transform: translateX(-50%);
-}
-
-.content {
-	/* position: fixed; */
-	 height: 100%;
-	width: 100%;
-	top: 250px;
-	overflow: auto;
-	padding-top: 20px;
-	margin-bottom: 20px;
-	background: #723D46;
-	text-align: center;
-	color: #DDDDD9;
-	padding: 1% 0;
-	position: relative;
-}
-
-.choices {
-	padding-bottom: 40px;
-}
-
-/*.picture{
-    vertical-align: middle;
-    display: table-cell;
-}
-
-.details{
-    vertical-align: top;
-    display: table-cell;
-}*/
-.picture img {
-	max-width: 25%;
-	min-width: 200px;
-	height: auto;
-}
-
-input[type="text"] {
-	width: 25px;
-	margin-right: 20px;
-}
-
-.submitButton {
-	position: fixed;
-	bottom: -4px;
-	right: 10px;
-	border-radius: 12px;
-	padding: 10px 30px;
-	border: 2px solid #4CAF50;
-	background-color: white;
-	color: black;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-}
-
-input[type=submit] {
-	border: none;
-	padding: 16px 32px;
-	text-decoration: none;
-	margin: 4px 2px;
-	cursor: pointer;
-	background-color: white;
-}
-
-.submitButton:hover, input[type=submit]:hover {
-	background-color: #4CAF50; /* Green */
-	color: white;
-}
-
-.submitButton:active {
-	background-color: #3e8e41;
-	color: black;
-	box-shadow: 0 5px #666;
-	transform: translateX(20px);
-}
-</style>
-
-</head>
- -->
-
-<!-- 
-	<header class="zoom">
-		<img
-			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
-			height="250" />
-
-
-	</header>
-	
-	 -->
-<%-- 	<div class="header">
-		<center>
-			<img
-				src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
-				height="250" />
-		</center>
-	</div> --%>
-
-
+<link rel="apple-touch-icon" sizes="180x180"
+	href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="https://raw.githubusercontent.com/giantolentino/simplycaffeine/test/WebContent/WEB-INF/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 <title>Simply Caffeine</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -368,11 +224,27 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -384,7 +256,19 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -392,7 +276,19 @@ transform
 
 
 
+
+
+
+
 translateY
+
+
+
+
+
+
+
+
 
 
 
@@ -417,11 +313,27 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
 
 
 
+
+
+
+
  
+
+
+
+
 
 
 
@@ -433,7 +345,19 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
 
 
 
@@ -441,7 +365,20 @@ opacity
 
 
 
+
+
+
+
 translateY
+
+
+
+
+
+
+
+ 
+
 
 
 
@@ -512,7 +449,8 @@ input[type=submit] {
 	background-color: #3e8e41;
 	color: black;
 	box-shadow: 0 5px #666;
-	transform: translateX(20px);
+	/*	transform: translateX(20px);
+*/
 }
 
 .legendTag {
@@ -521,6 +459,18 @@ input[type=submit] {
 	font-weight: bold;
 	color: darkgreen;
 	font-weight: bold;
+}
+
+.column {
+	float: left;
+	width: 20%;
+	margin: 5px;
+}
+
+.column-right {
+	float: right;
+	width: 65%;
+	margin: 5px;
 }
 </style>
 </head>
@@ -535,15 +485,19 @@ input[type=submit] {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#myPage">Logo</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
+				<img
+					src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
+					width=5% height=auto><a class="navbar-brand text-xl"
+					href="#myPage">SIFE</a>
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="">${user.first}'s PAGE</a></li>
 					<li><a href="#about">ABOUT</a></li>
 					<li><a href="#PRODUCTS">PRODUCTS</a></li>
-					<li><a href="#portfolio">PORTFOLIO</a></li>
 					<li><a href="#checkout">CHECKOUT</a></li>
 					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="Logout">LOGOUT</a></li>
 				</ul>
 			</div>
 		</div>
@@ -551,7 +505,7 @@ input[type=submit] {
 
 	<div class="jumbotron text-center">
 		<img
-			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/logo/LOGOpage.jpg"
+			src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/logo/LOGOpage.jpg"
 			width=50% height=auto>
 		<h1>Simply Caffeine</h1>
 		<p>We will deliver coffee to your class!</p>
@@ -572,11 +526,12 @@ input[type=submit] {
 					will include: images of the drink options, a description of each
 					drink, price per drink, and customers can buy multiples of each
 					item as well. Once they have finalized their order they will be
-					redirected to a secondary page, “Checkout” page, in which they will
-					be presented with the estimated time of delivery and total cost.
-					Once the order is placed the customer will be redirected again to a
-					new page that will confirm their order has been processed and
-					countdown of the estimated delivery time will be prompted.</h4>
+					redirected to a secondary page, “Checkout” page, in which they
+					will be presented with the estimated time of delivery and total
+					cost. Once the order is placed the customer will be redirected
+					again to a new page that will confirm their order has been
+					processed and countdown of the estimated delivery time will be
+					prompted.</h4>
 				<br>
 				<h4>When the order is processed the orders will be sent to a
 					webpage only viewable to the coffee shop. This page will have a
@@ -607,7 +562,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/americano.jpg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/americano.jpg" />
 					</div>
 
 					<div class="details">
@@ -619,8 +574,9 @@ input[type=submit] {
 						<div class="addorder">
 							<form action="Homepage" method="post">
 								Qty: <input type="text" name="quantity" id="americano" /> <input
-									type="hidden" name="coffeeName" value="americano" />
-								<button type="button" class="btn btn-primary">Add to
+									type="hidden" name="coffeeName" value="Americano" /> <input
+									type="hidden" name="price" value="3.00" />
+								<button type="submit" class="btn btn-primary">Add to
 									Order</button>
 
 							</form>
@@ -632,7 +588,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/cafemocha.jpg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/cafemocha.jpg" />
 					</div>
 
 					<div class="details">
@@ -641,10 +597,13 @@ input[type=submit] {
 							<h4>A drink comprised of espresso and hot water.</h4>
 						</div>
 						<div class="addorder">
-							Qty: <input type="text" name="quantity" id="caffemocha" /> <input
-								type="hidden" name="coffeeName" value="caffemocha" />
-							<button type="button" class="btn btn-primary">Add to
-								Order</button>
+							<form action="Homepage" method="post">
+								Qty: <input type="text" name="quantity" id="caffemocha" /> <input
+									type="hidden" name="coffeeName" value="Mocha" /> <input
+									type="hidden" name="price" value="3.50" />
+								<button type="submit" class="btn btn-primary">Add to
+									Order</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -656,7 +615,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/caffelatte.jpeg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/caffelatte.jpeg" />
 					</div>
 
 					<div class="details">
@@ -666,10 +625,13 @@ input[type=submit] {
 						</div>
 
 						<div class="addorder">
-							Qty: <input type="text" name="quantity" id="caffelatte" /> <input
-								type="hidden" name="coffeeName" value="caffelatte" />
-							<button type="button" class="btn btn-primary">Add to
-								Order</button>
+							<form action="Homepage" method="post">
+								Qty: <input type="text" name="quantity" id="caffelatte" /> <input
+									type="hidden" name="coffeeName" value="Latte" /> <input
+									type="hidden" name="price" value="3.50" />
+								<button type="submit" class="btn btn-primary">Add to
+									Order</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -679,7 +641,7 @@ input[type=submit] {
 				<div class="choices">
 					<div class="picture">
 						<img
-							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/menu/espresso.jpg" />
+							src="https://raw.githubusercontent.com/giantolentino/simplycaffeine/master/oldfiles/menu/espresso.jpg" />
 					</div>
 
 					<div class="details">
@@ -689,11 +651,13 @@ input[type=submit] {
 						</div>
 
 						<div class="addorder">
-							Qty: <input type="text" name="quantity" id="espresso" /> <input
-								type="hidden" name="coffeeName" value="espresso" />
-							<button type="button" class="btn btn-primary">Add to
-								Order</button>
-
+							<form action="Homepage" method="post">
+								Qty: <input type="text" name="quantity" id="espresso" /> <input
+									type="hidden" name="coffeeName" value="Espresso" /> <input
+									type="hidden" name="price" value="3.00" />
+								<button type="submit" class="btn btn-primary">Add to
+									Order</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -702,175 +666,116 @@ input[type=submit] {
 	</div>
 
 
-	<!-- Container (Portfolio Section) -->
-	<div id="portfolio" class="container-fluid text-center bg-grey">
-		<h2>Portfolio</h2>
-		<br>
-		<h4>What we have created</h4>
-		<div class="row text-center slideanim">
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="paris.jpg" alt="Paris" width="400" height="300">
-					<p>
-						<strong>Paris</strong>
-					</p>
-					<p>Yes, we built Paris</p>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="newyork.jpg" alt="New York" width="400" height="300">
-					<p>
-						<strong>New York</strong>
-					</p>
-					<p>We built New York</p>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="thumbnail">
-					<img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-					<p>
-						<strong>San Francisco</strong>
-					</p>
-					<p>Yes, San Fran is ours</p>
-				</div>
-			</div>
-		</div>
-		<br>
-		<h2>What our customers say</h2>
-		<div id="myCarousel" class="carousel slide text-center"
-			data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<h4>
-						"WOW!! Best coffee on campus!!!"<br>
-						<span>Michael Roe, Vice President, Comment Box</span>
-					</h4>
-				</div>
-				<div class="item">
-					<h4>
-						"One word... WOW!!"<br>
-						<span>John Doe, Salesman, Rep Inc</span>
-					</h4>
-				</div>
-				<div class="item">
-					<h4>
-						"Could I... BE any more happy with this company?"<br>
-						<span>Chandler Bing, Actor, FriendsAlot</span>
-					</h4>
-				</div>
-			</div>
-
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button"
-				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#myCarousel" role="button"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
 
 	<!-- Container (checkout Section) -->
 	<div id="checkout" class="container-fluid">
-
-
 		<div class="checkout_panel form-group">
 			<div class="panel_body">
 				<form action="Homepage" method="post">
 					<fieldset>
-						<legend class="legendTag">
-							 CheckOut....
-						</legend>
-						 <label for="Building"> <span>Building:</span>
-							<strong><abbr title="required ">*</abbr></strong>
-						</label> <input type="text" id="building" name="building" class="form-control"  placeholder="Enter Building Name"/><br /> <br />
-						<label for="Room#"> <span>Room Number :</span> <strong><abbr
-								title="required">*</abbr></strong>
-						</label> <input type="text" id="roomNumber" name="roomNumber" class="form-control"  placeholder="Enter Room Number" /> <br />
-					
-						<div class="form-group row form-inline">
-						<label for="hour"> <span> Hour</span>
-						</label> <select class="col-sm-2 col-form-label form-control" id="hour" name="hour">
-							<option value="1">01</option>
-							<option value="2">02</option>
-							<option value="3">03</option>
-							<option value="4">04</option>
-							<option value="5">05</option>
-							<option value="6">06</option>
-							<option value="7">07</option>
-							<option value="8">08</option>
-							<option value="9">09</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
+						<legend class="legendTag"> CheckOut.... </legend>
 
-						</select> <label for="minutes"> <span> Minutes
-						</span>
-						</label> <select class="col-sm-2 col-form-label form-control" id="minutes" name="minutes">
-							<option value="00">00</option>
-							<option value="05">05</option>
-							<option value="10">10</option>
-							<option value="15">15</option>
-							<option value="20">20</option>
-							<option value="25">25</option>
-							<option value="30">30</option>
-							<option value="35">35</option>
-							<option value="40">40</option>
-							<option value="45">45</option>
-							<option value="50">50</option>
-							<option value="55">55</option>
+						<div class="column">
+						
+							<label for="Building"> <span>Building:</span> <strong><abbr
+								class="text-danger font-weight-bold">*</abbr></strong>
+							</label> <input type="text" id="building" name="building"
+								class="form-control" placeholder="Enter Building Name" /><br />
+							<label for="Room#"> <span>Room Number :</span> <strong><abbr
+									class="text-danger font-weight-bold">*</abbr></strong>
+							</label> <input type="text" id="roomNumber" name="roomNumber"
+								class="form-control" placeholder="Enter Room Number" /> <br />
 
-						</select>  
+							<p>Hour &nbsp; Minutes</p>
+							<div class="form-group row form-inline container">
+								<label for="hour"> &ensp; </label> <select
+									class="col-sm-2 col-form-label form-control" id="hour"
+									name="hour">
+									<option value="1">01</option>
+									<option value="2">02</option>
+									<option value="3">03</option>
+									<option value="4">04</option>
+									<option value="5">05</option>
+									<option value="6">06</option>
+									<option value="7">07</option>
+									<option value="8">08</option>
+									<option value="9">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+
+								</select> &ensp; <label for="minutes"> &ensp; </label> <select
+									class="col-sm-2 col-form-label form-control" id="minutes"
+									name="minutes">
+									<option value="00">00</option>
+									<option value="05">05</option>
+									<option value="10">10</option>
+									<option value="15">15</option>
+									<option value="20">20</option>
+									<option value="25">25</option>
+									<option value="30">30</option>
+									<option value="35">35</option>
+									<option value="40">40</option>
+									<option value="45">45</option>
+									<option value="50">50</option>
+									<option value="55">55</option>
+
+								</select> <label for="am"> <input
+									class="form-check form-check-inline" type="radio" id="am"
+									name="period" value="AM" /> AM
+
+								</label> <label for="pm"> <input
+									class="form-check form-check-inline" type="radio" id="pm"
+									name="period" value="PM" /> PM
+								</label> <br /> <br />
+
+							</div>
+
 						</div>
-						<label for="am"> <input  class="form-check form-check-inline" type="radio"
-							id="am" name="period" value="am" /> AM
-						</label> <label for="pm"> <input class="form-check form-check-inline" type="radio" id="pm"
-							name="period" value="pm" /> PM
-						</label>
-						 <br /> <br />
-						<h3>this is what you ordered...........................</h3>
 
 
-						<table class="table table-hover">
-							<thead class="thead-dark text-center">
-								<tr>
-									<th>Id</th>
-									<th>Coffee</th>
-									<th>Quantity</th>
-									<th>Cost</th>
-									<th>Total Cost</th>
-									<th></th>
 
-								</tr>
-							</thead>
-							<tbody id="checked">
-								<c:forEach items="${coffeeEntries}" var="coffeeEntry">
-									<tr>
-										<td class="text-center">${coffeeEntry.id}</td>
-										<td class="text-center">${coffeeEntry.coffeeName}</td>
-										<td class="text-center">${coffeeEntry.quantity}</td>
-										<td class="text-center">${coffeeEntry.cost}</td>
-										<td class="text-center">${coffeeEntry.cost}</td>
-										<%-- 	<td class="text-center">${coffeeEntry.period}</td> --%>
-										<td class="text-center"><a
-											href='Delivered?id=${coffeeEntry.id}'>Edit</a></td>
-									</tr>
-								</c:forEach>
+						<div class="container">
 
-							</tbody>
-						</table>
+							<div class="column-right">
+								<!-- 	
+								<h3>This is what you ordered...........................</h3>
+					 -->
+								<table class="table table-hover">
+									<thead class="thead-dark text-center">
+										<tr>
+											<th class="text-center">Coffee</th>
+											<th class="text-center">Quantity</th>
+											<th class="text-center">Cost</th>
+											<th class="text-center"></th>
+											<th></th>
+
+										</tr>
+									</thead>
+									<tbody id="checked">
+										<c:forEach items="${coffeeEntries}" var="coffeeEntry">
+											<tr>
+
+												<td class="text-center">${coffeeEntry.coffeeName}</td>
+												<td class="text-center">${coffeeEntry.quantity}</td>
+												<td class="text-center">$${coffeeEntry.cost}</td>
+												<td class="text-center">$${coffeeEntry.totalCost}</td>
+												<td class="btn"><a href='Delete?id=${coffeeEntry.id}'
+													class="text-danger">Delete</a></td>
+												<td class="btn "><a href='Edit?id=${coffeeEntry.id}'
+													class="text-primary">Edit</a></td>
+											</tr>
+										</c:forEach>
+										<c:if test="${ sumTotal != 0.0 }">
+											<tr>
+												<td class="text-center" colspan='4'><h4>Total</h4></td>
+												<td class="text-center"><h4>$${sumTotal}</h4></td>
+											</tr>
+										</c:if>
+									</tbody>
+								</table>
+							</div>
+						</div>
 
 					</fieldset>
 
@@ -878,21 +783,19 @@ input[type=submit] {
 						<input type="submit" name="order" value="Order my Coffee!" />
 					</div>
 				</form>
-
 			</div>
 		</div>
-
 	</div>
 
-
 	<!-- Container (Contact Section) -->
-	<div id="contact" class="container-fluid bg-grey">
+	<div id="contact" class="container-fluid">
 		<h2 class="text-center">CONTACT</h2>
 		<div class="row ">
 			<div class=" text-center">
 				<p>Contact us and we'll get back to you within 24 hours.</p>
 				<p>
-					<span class="glyphicon glyphicon-map-marker"></span> Los Angeles, US
+					<span class="glyphicon glyphicon-map-marker"></span> Los Angeles,
+					US
 				</p>
 				<p>
 					<span class="glyphicon glyphicon-phone"></span> +1-323-500-0000
@@ -901,19 +804,22 @@ input[type=submit] {
 					<span class="glyphicon glyphicon-envelope"></span>
 					simplyCaffeine@gmail.com
 				</p>
-			</div>
+				<p>
+
+					<span class="glyphicon glyphicon-copyright-mark"></span> Simply
+					Caffeine 2018
+				</p>
 			
+			</div>
 		</div>
 	</div>
 
-	
-	
 
 	<footer class="container-fluid text-center">
 		<a href="#myPage" title="To Top"> <span
 			class="glyphicon glyphicon-chevron-up"></span>
 		</a>
-	
+
 	</footer>
 
 	<script>
@@ -952,13 +858,6 @@ input[type=submit] {
 				})
 	</script>
 
-	<!-- 	<div class="content">
-		<form action="Homepage" method="post">
-	
-			<div class="submitButton">
-				<input type="submit" name="order" value="Continue to checkout!" />
-			</div>
-		</form>
-	</div> -->
+
 </body>
 </html>

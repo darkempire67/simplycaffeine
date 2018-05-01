@@ -9,10 +9,15 @@ public class OrderEntry {
 	String hour;
 	String minutes;
 	String period;
-
+	String firstName;
+	String coffeeName;
+	String quantity;
 	
-	public OrderEntry(Integer id, String building, String roomNumber, String hour, String minutes, String period) {
+	public OrderEntry(Integer id, String firstName, String coffeeName, String quantity, String building, String roomNumber, String hour, String minutes, String period) {
 		this.id = id;
+		this.firstName = firstName;
+		this.coffeeName = coffeeName;
+		this.quantity = quantity;
 		this.building = building;
 		this.roomNumber = roomNumber;
 		this.hour = hour;
@@ -20,6 +25,39 @@ public class OrderEntry {
 		this.period = period;
 		
 	}
+
+
+
+
+	public void setCoffeeName(String coffeeName) {
+		this.coffeeName = coffeeName;
+	}
+
+
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
+
+
+
+	public String getFirst() {
+		return firstName;
+	}
+
+
+
+	public String getCoffeeName() {
+		return coffeeName;
+	}
+
+
+
+	public String getQuantity() {
+		return quantity;
+	}
+
+
 
 	public Integer getId() {
 		return id;
